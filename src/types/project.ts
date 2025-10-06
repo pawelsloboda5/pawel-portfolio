@@ -16,6 +16,9 @@ export interface FeaturedProject {
   /** Main description of the project (supports HTML for inline links) */
   description: string;
   
+  /** Shortened description for mobile viewports (optional, falls back to description) */
+  mobileDescription?: string;
+  
   /** Array of technology/tool names used in the project */
   techStack: string[];
   

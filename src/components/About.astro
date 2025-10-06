@@ -24,32 +24,47 @@ import { companyLinks } from '../data/links';
     <ScrollReveal client:load variant="slide-up" duration={600} threshold={0.15} delay={100} distance={25}>
       <div class="grid md:grid-cols-5 gap-8 md:gap-12 items-start">
         <!-- Bio Content -->
-        <div class="md:col-span-3 space-y-3 md:space-y-4 text-[var(--color-text-secondary)] text-md md:text-base leading-relaxed">
-        <p>
-          Hello! I'm Pawel, a software engineer who's been building things for the web since I was 12. Back then, I was creating Adobe Flash games and text-based RPG games, publishing them on <a href="https://www.kongregate.com/accounts/WarriorsBattle" target="_blank" rel="noopener noreferrer" class="keyword-link">Kongregate</a> where they collectively reached over 50,000 gameplays. That early experience of building something people actually used sparked a passion that's shaped my entire career.
-        </p>
+        <div class="md:col-span-3 text-[var(--color-text-secondary)] text-md md:text-base leading-relaxed">
         
-        <p>
-          Fast forward to today, and I've built AI-powered health platforms at <a href={companyLinks.sie2} target="_blank" rel="noopener noreferrer" class="keyword-link">a social impact startup</a>, developed machine learning pipelines at <a href={companyLinks.adobe} target="_blank" rel="noopener noreferrer" class="keyword-link">Adobe</a>, and engineered cybersecurity infrastructure for <a href={companyLinks.ndu} target="_blank" rel="noopener noreferrer" class="keyword-link">the Department of Defense</a>. My work focuses on creating systems that are both technically sophisticated and genuinely useful.
-        </p>
+        <!-- Mobile Bio (Shortened) - visible only on mobile -->
+        <div class="md:hidden space-y-4">
+          <p>
+            Hello! I'm Pawel, a software engineer who's been building things for the web since I was 12. I started with Adobe Flash games on <a href="https://www.kongregate.com/accounts/WarriorsBattle" target="_blank" rel="noopener noreferrer" class="keyword-link">Kongregate</a> that reached over 50,000 gameplays, and that early experience sparked a passion that's shaped my entire career.
+          </p>
+          
+          <p>
+            Today, I've built AI-powered health platforms at <a href={companyLinks.sie2} target="_blank" rel="noopener noreferrer" class="keyword-link">a social impact startup</a>, developed machine learning pipelines at <a href={companyLinks.adobe} target="_blank" rel="noopener noreferrer" class="keyword-link">Adobe</a>, and engineered cybersecurity infrastructure for <a href={companyLinks.ndu} target="_blank" rel="noopener noreferrer" class="keyword-link">the Department of Defense</a>. I specialize in full-stack development with a focus on AI integration, vector search, and data engineering.
+          </p>
+        </div>
         
-        <p>
-          Most recently, I've been extracting and parsing terabytes of insurer data to estimate healthcare costs, transforming unstructured medical billing data into structured formats that power an <a href={companyLinks.sie2} target="_blank" rel="noopener noreferrer" class="keyword-link">AI copilot</a>. I specialize in full-stack development with a strong focus on AI integration, vector search, and data engineering, tackling complex problems like semantic search across 50,000+ services and real-time ML inference.
-        </p>
+        <!-- Desktop Bio (Full) - visible on tablet and up -->
+        <div class="hidden md:block space-y-4">
+          <p>
+            Hello! I'm Pawel, a software engineer who's been building things for the web since I was 12. Back then, I was creating Adobe Flash games and text-based RPG games, publishing them on <a href="https://www.kongregate.com/accounts/WarriorsBattle" target="_blank" rel="noopener noreferrer" class="keyword-link">Kongregate</a> where they collectively reached over 50,000 gameplays. That early experience of building something people actually used sparked a passion that's shaped my entire career.
+          </p>
+          
+          <p>
+            Fast forward to today, and I've built AI-powered health platforms at <a href={companyLinks.sie2} target="_blank" rel="noopener noreferrer" class="keyword-link">a social impact startup</a>, developed machine learning pipelines at <a href={companyLinks.adobe} target="_blank" rel="noopener noreferrer" class="keyword-link">Adobe</a>, and engineered cybersecurity infrastructure for <a href={companyLinks.ndu} target="_blank" rel="noopener noreferrer" class="keyword-link">the Department of Defense</a>. My work focuses on creating systems that are both technically sophisticated and genuinely useful.
+          </p>
+          
+          <p>
+            Most recently, I've been extracting and parsing terabytes of insurer data to estimate healthcare costs, transforming unstructured medical billing data into structured formats that power an <a href={companyLinks.sie2} target="_blank" rel="noopener noreferrer" class="keyword-link">AI copilot</a>. I specialize in full-stack development with a strong focus on AI integration, vector search, and data engineering, tackling complex problems like semantic search across 50,000+ services and real-time ML inference.
+          </p>
+        </div>
         
-        <p class="text-[var(--color-text-primary)]">
+        <p class="text-[var(--color-text-primary)] mt-6">
           Here are some technologies I've been working with recently:
         </p>
         
         <!-- Skills Grid -->
-        <ul class="grid grid-cols-2 gap-2 pt-4 font-mono text-sm">
+        <ul class="grid grid-cols-2 gap-2 pt-2 font-mono text-sm">
           <li class="flex items-center gap-2">
             <span class="text-[var(--color-accent-primary)]">▹</span>
             TypeScript / JavaScript
           </li>
           <li class="flex items-center gap-2">
             <span class="text-[var(--color-accent-primary)]">▹</span>
-            React / Next.js 15
+            React 19 / Next.js 15
           </li>
           <li class="flex items-center gap-2">
             <span class="text-[var(--color-accent-primary)]">▹</span>
@@ -57,7 +72,7 @@ import { companyLinks } from '../data/links';
           </li>
           <li class="flex items-center gap-2">
             <span class="text-[var(--color-accent-primary)]">▹</span>
-            Azure OpenAI / GPT-4
+            OpenAI / Responses API
           </li>
           <li class="flex items-center gap-2">
             <span class="text-[var(--color-accent-primary)]">▹</span>
@@ -69,11 +84,11 @@ import { companyLinks } from '../data/links';
           </li>
           <li class="flex items-center gap-2">
             <span class="text-[var(--color-accent-primary)]">▹</span>
-            Azure Cosmos DB
+            Azure Cosmos DB / MongoDB
           </li>
           <li class="flex items-center gap-2">
             <span class="text-[var(--color-accent-primary)]">▹</span>
-            Docker / CI/CD
+            Docker / GitHub Actions
           </li>
         </ul>
       </div>

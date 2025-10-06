@@ -11,6 +11,7 @@ export const featuredProjects: FeaturedProject[] = [
     title: 'SIE Wellness',
     tagline: 'AI Copilot for Health Access',
     description: `An AI-driven health-access platform designed to help uninsured and low-income users find free or low-cost medical care across the DMV area. The system combines semantic search, vector embeddings, and an AI Copilot chat assistant to guide users to the best clinics, hospitals, or providers for their needs. Adopted by 2 shelters and 30+ caseworkers, with 100K+ Google impressions in 3 weeks.`,
+    mobileDescription: `An AI-driven platform helping uninsured users find free or low-cost medical care across the DMV area. Combines semantic search and AI chat to guide users to the right providers. Adopted by 2 shelters and 30+ caseworkers.`,
     techStack: [
       'Next.js 15',
       'React 19',
@@ -41,6 +42,7 @@ export const featuredProjects: FeaturedProject[] = [
     title: 'Apicus.io',
     tagline: 'Automation ROI & AI Recommender System',
     description: `An AI-powered automation ROI intelligence platform that helps companies calculate return on investment for workflow automations. Uses an advanced Retrieval-Augmented Generation (RAG) system and a vector database of 500,000+ automation combinations to match use cases to the most cost-effective workflows. Increased retrieval accuracy by 50% and scaled to 50+ beta users across 3 agencies.`,
+    mobileDescription: `An AI-powered platform helping companies calculate ROI for workflow automations. Uses RAG and a vector database of 500,000+ automation combinations to match use cases to cost-effective workflows. Scaled to 50+ beta users across 3 agencies.`,
     techStack: [
       'Next.js 15',
       'FastAPI',
@@ -48,8 +50,7 @@ export const featuredProjects: FeaturedProject[] = [
       'Azure OpenAI',
       'MongoDB Atlas',
       'LangChain',
-      'Docker',
-      'Azure'
+      'Docker'
     ],
     liveUrl: 'https://apicus.io',
     githubUrl: undefined, // Private repository
@@ -72,14 +73,14 @@ export const featuredProjects: FeaturedProject[] = [
     title: 'SecuSpark',
     tagline: 'Gamified AI Security+ Exam Prep',
     description: `A gamified, AI-powered learning platform for CompTIA Security+ certification prep. Built as an offline-first progressive web app (PWA), SecuSpark provides personalized question recommendations and AI explanations running directly in the browser. Scaled to 1,000+ monthly active users with 54% increase in engagement rates through adaptive difficulty and RPG-style progression.`,
+    mobileDescription: `A gamified AI-powered platform for CompTIA Security+ exam prep. Built as an offline-first PWA with personalized recommendations and AI explanations. Scaled to 1,000+ monthly active users with 54% increase in engagement.`,
     techStack: [
       'React',
       'TypeScript',
       'Vite',
       'IndexedDB',
-      'GPT-4',
-      'Tailwind CSS',
-      'Firebase'
+      'Responses API',
+      'Tailwind CSS'
     ],
     liveUrl: 'https://secuspark.com',
     githubUrl: undefined, // Private repository

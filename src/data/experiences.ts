@@ -9,11 +9,11 @@ export const experiences: Experience[] = [
   {
     company: 'Social Impact Enterprise',
     title: 'Full-Stack Software Engineer',
-    duration: 'May 2025 - August 2025',
+    duration: 'July 2025 - October 2025',
     location: 'Washington, DC',
     url: 'https://www.sie2.com',
     description: [
-      'Built an AI-driven health-access platform mining 3k+ DMV providers (50k+ services), powering CareFind used by 2 shelters & 30+ caseworkers',
+      'Built an AI-driven health-access platform mining 3k+ DMV providers (50k+ services), powering AI copilot and semantic search used by 2 shelters & 30+ caseworkers',
       'Deployed Cosmos DB vCore + Azure OpenAI embeddings for sub-second semantic search, cutting RU costs 38%',
       'Designed a TypeScript + Python agent framework where LLMs extract insurance/SSN/free-service data with 92% F1, auto-refreshed nightly',
       'Refactored Next.js 15 / React 19 front end with shadcn/ui + Tailwind, boosting a11y from 71 → 98 and FCP to 1.2s',

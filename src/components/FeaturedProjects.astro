@@ -23,7 +23,13 @@ import { featuredProjects } from '../data/featuredProjects';
             </h3>
             
             <div class="project-description">
-              <p set:html={project.description} />
+              <!-- Mobile Description (Shortened) - visible only on mobile -->
+              {project.mobileDescription && (
+                <p class="md:hidden" set:html={project.mobileDescription} />
+              )}
+              
+              <!-- Desktop Description (Full) - visible on tablet and up -->
+              <p class={project.mobileDescription ? "hidden md:block" : ""} set:html={project.description} />
             </div>
 
             <ul class="project-tech-list">

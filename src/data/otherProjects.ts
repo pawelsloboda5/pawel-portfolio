@@ -11,7 +11,7 @@ export const otherProjects: OtherProject[] = [
     id: 'healthcare-cost-navigator',
     title: 'Healthcare Cost Navigator',
     description: 'AI-powered tool to query U.S. hospital pricing data in plain English. Converts Medicare dataset into a conversational API with geospatial search, quality ratings, and sub-300ms query performance.',
-    techStack: ['Python', 'FastAPI', 'PostgreSQL', 'PostGIS', 'pgvector', 'Docker', 'OpenAI GPT-4'],
+    techStack: ['Python', 'FastAPI', 'PostgreSQL', 'PostGIS', 'pgvector', 'Docker', 'AWS EC2'],
     githubUrl: projectGithubLinks.HealthCareNavigator,
     externalUrl: companyLinks.HealthCareNavigator
   },
@@ -35,7 +35,7 @@ export const otherProjects: OtherProject[] = [
     id: 'rusthax',
     title: 'RustHax – Real-Time Object Detection',
     description: 'High-performance object detection system for live video streams targeting 60+ FPS. Custom-trained YOLOv8 achieving 95% precision with optimized pipeline and ONNX export for deployment flexibility.',
-    techStack: ['Python', 'PyTorch', 'YOLOv8', 'OpenCV', 'ONNX Runtime'],
+    techStack: ['Python', 'PyTorch', 'YOLOv8', 'OpenCV', 'ONNX Runtime','Win32 API'],
     githubUrl: projectGithubLinks.RustHax,
     externalUrl: undefined
   },
@@ -51,7 +51,7 @@ export const otherProjects: OtherProject[] = [
     id: 'calworks-analysis',
     title: 'CalWORKs Data Analysis (San Francisco)',
     description: 'Analyzed CalWORKs eligibility and economic disparities across San Francisco using Census PUMS microdata. Config-driven pipeline with insightful visualizations identifying affordability gaps and assistance needs.',
-    techStack: ['Python', 'pandas', 'numpy', 'matplotlib', 'seaborn'],
+    techStack: ['Python', 'pandas', 'numpy', 'matplotlib', 'seaborn','PUMS data','YAML'],
     githubUrl: projectGithubLinks.CalworksAnalysis,
     externalUrl: undefined
   }
