@@ -25,16 +25,26 @@ export default function ExperienceTabs() {
       setContainerHeight(maxHeight);
     };
 
-    // Measure after initial render
-    measureHeights();
-
-    // Recalculate on window resize
-    const handleResize = () => {
+    // Measure after initial render with a small delay to ensure proper rendering
+    const timeoutId = setTimeout(() => {
       measureHeights();
+    }, 100);
+
+    // Recalculate on window resize with debounce
+    let resizeTimeout: NodeJS.Timeout;
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        measureHeights();
+      }, 150);
     };
 
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    return () => {
+      clearTimeout(timeoutId);
+      clearTimeout(resizeTimeout);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
@@ -71,7 +81,7 @@ export default function ExperienceTabs() {
       {/* Tab Panel Container with Fixed Height */}
       <div
         ref={containerRef}
-        className="flex-1 relative"
+        className="flex-1 relative w-full"
         style={{
           height: containerHeight ? `${containerHeight}px` : 'auto',
           minHeight: '300px',
@@ -89,7 +99,7 @@ export default function ExperienceTabs() {
             aria-labelledby={`tab-${index}`}
             aria-hidden={activeTab !== index}
             className={`
-              absolute inset-0 transition-opacity duration-300
+              absolute top-0 left-0 right-0 transition-opacity duration-300
               ${activeTab === index ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
             `}
             style={{

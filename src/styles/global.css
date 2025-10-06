@@ -122,3 +122,14 @@ section {
     scroll-behavior: smooth;
   }
 }
+
+/* Blur page content when mobile menu is open */
+body[data-mobile-menu-open="true"] > :not(.mobile-menu-overlay) {
+  filter: blur(8px);
+  transition: filter 0.3s ease-in-out;
+}
+
+body:not([data-mobile-menu-open]) > * {
+  filter: blur(0);
+  transition: filter 0.3s ease-in-out;
+}

@@ -4,15 +4,18 @@ import { socialLinks } from '../data/links';
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Prevent body scroll when menu is open
+  // Prevent body scroll and add blur when menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      document.body.setAttribute('data-mobile-menu-open', 'true');
     } else {
       document.body.style.overflow = 'unset';
+      document.body.removeAttribute('data-mobile-menu-open');
     }
     return () => {
       document.body.style.overflow = 'unset';
+      document.body.removeAttribute('data-mobile-menu-open');
     };
   }, [isOpen]);
 
@@ -49,7 +52,7 @@ export default function MobileMenu() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 md:hidden transition-opacity duration-300 ${
+        className={`mobile-menu-overlay fixed inset-0 z-40 md:hidden transition-opacity duration-300 ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
@@ -66,29 +69,6 @@ export default function MobileMenu() {
           }`}
           aria-label="Mobile navigation"
         >
-          {/* Close X Button */}
-          <button
-            onClick={() => setIsOpen(false)}
-            aria-label="Close menu"
-            className={`absolute top-8 right-8 text-[var(--color-accent-primary)] hover:opacity-70 transition-all duration-300 ${
-              isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
-            }`}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
           <ul className="flex flex-col items-center gap-10 text-center w-full px-8">
             <li className="w-full">
               <a
