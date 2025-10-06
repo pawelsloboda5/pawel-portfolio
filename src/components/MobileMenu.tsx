@@ -59,6 +59,11 @@ export default function MobileMenu() {
   // Open chatbot mode
   const handleOpenChatbot = () => {
     setIsChatbotMode(true);
+    // Clear the badge/alert when opening
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('chatbot-last-opened', Date.now().toString());
+      window.dispatchEvent(new CustomEvent('chatbotMessagesUpdated'));
+    }
   };
 
   // Close chatbot and return to menu
@@ -98,12 +103,14 @@ export default function MobileMenu() {
 
   return (
     <>
-      {/* Hamburger Button */}
+      {/* Hamburger Button - hide when chatbot mode is active */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-label="Toggle navigation menu"
-        className="md:hidden relative z-50 w-12 h-12 flex flex-col items-center justify-center gap-2"
+        className={`md:hidden relative z-50 w-12 h-12 flex flex-col items-center justify-center gap-2 transition-opacity duration-300 ${
+          isChatbotMode ? 'opacity-0 pointer-events-none' : 'opacity-100'
+        }`}
       >
         <span
           className={`block w-7 h-[2.5px] bg-[var(--color-accent-primary)] transition-all duration-300 ${
@@ -122,9 +129,9 @@ export default function MobileMenu() {
         ></span>
       </button>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay - starts below header */}
       <div
-        className={`mobile-menu-overlay fixed inset-0 z-40 md:hidden transition-opacity duration-300 ${
+        className={`mobile-menu-overlay fixed top-20 left-0 right-0 bottom-0 z-40 md:hidden transition-opacity duration-300 ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
@@ -151,7 +158,7 @@ export default function MobileMenu() {
               onReset={handleReset}
             />
           ) : (
-            <ul className="flex flex-col items-center gap-6 text-center w-full px-8 justify-center h-full">
+            <ul className="flex flex-col items-center gap-6 text-center w-full px-8 pt-12 h-full">
             <li className="w-full">
               <a
                 href="#about"
