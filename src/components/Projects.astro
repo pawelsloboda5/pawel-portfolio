@@ -5,7 +5,7 @@ import FeaturedProjects from './FeaturedProjects.astro';
 import OtherProjects from './OtherProjects.astro';
 ---
 
-<section id="projects" class="scroll-mt-20">
+<section id="projects" class="scroll-mt-20 projects-section">
   <div class="w-full max-w-5xl mx-auto">
     <!-- Section Header -->
     <ScrollReveal client:load variant="slide-up" duration={500} threshold={0.2} distance={20}>
@@ -29,4 +29,19 @@ import OtherProjects from './OtherProjects.astro';
     <OtherProjects />
   </div>
 </section>
+
+<style>
+  /* Mobile-specific spacing to create clear separation from Experience section */
+  @media (max-width: 768px) {
+    .projects-section {
+      padding-top: 6rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .projects-section {
+      padding-top: 5rem !important;
+    }
+  }
+</style>
 

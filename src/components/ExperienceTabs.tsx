@@ -48,12 +48,12 @@ export default function ExperienceTabs() {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row gap-8">
+    <div className="flex flex-col md:flex-row gap-8 w-full">
       {/* Tab List */}
       <div
         role="tablist"
         aria-label="Job tabs"
-        className="flex md:flex-col overflow-x-auto md:overflow-visible border-b-2 md:border-b-0 md:border-l-2 border-[var(--color-border)]"
+        className="flex md:flex-col overflow-x-auto md:overflow-visible border-b-2 md:border-b-0 md:border-l-2 border-[var(--color-border)] flex-shrink-0"
       >
         {jobs.map((job, index) => (
           <button
@@ -81,7 +81,7 @@ export default function ExperienceTabs() {
       {/* Tab Panel Container with Fixed Height */}
       <div
         ref={containerRef}
-        className="flex-1 relative w-full"
+        className="flex-1 relative w-full min-w-0"
         style={{
           height: containerHeight ? `${containerHeight}px` : 'auto',
           minHeight: '300px',
