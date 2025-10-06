@@ -143,8 +143,9 @@ export default function ScrollReveal({
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translate(0, 0) scale(1) rotate(0deg)' : getInitialTransform(),
         filter: isVisible ? 'blur(0px)' : getInitialFilter(),
-        transition: `opacity ${duration}ms cubic-bezier(0.4, 0, 0.2, 1) ${delay}ms, transform ${duration}ms cubic-bezier(0.4, 0, 0.2, 1) ${delay}ms, filter ${duration}ms cubic-bezier(0.4, 0, 0.2, 1) ${delay}ms`,
+        transition: `opacity ${duration}ms cubic-bezier(0.4, 0, 0.2, 1) var(--reveal-delay, ${delay}ms), transform ${duration}ms cubic-bezier(0.4, 0, 0.2, 1) var(--reveal-delay, ${delay}ms), filter ${duration}ms cubic-bezier(0.4, 0, 0.2, 1) var(--reveal-delay, ${delay}ms)`,
         willChange: 'opacity, transform, filter',
+        ['--reveal-delay' as string]: `${delay}ms`,
       }}
     >
       {children}

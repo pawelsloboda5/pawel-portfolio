@@ -103,8 +103,10 @@ const {
           </ul>
         </nav>
 
-        <!-- Mobile Menu -->
-        <MobileMenu client:load />
+        <!-- Mobile Menu with page load animation -->
+        <PageLoadAnimation client:load delay={200} variant="slide-down">
+          <MobileMenu client:load />
+        </PageLoadAnimation>
       </div>
     </ScrollHeader>
 

@@ -7,7 +7,7 @@ import { companyLinks } from '../data/links';
 <section id="about" class="scroll-mt-20">
   <div class="w-full max-w-5xl mx-auto">
     <!-- Section Header -->
-    <ScrollReveal client:load variant="slide-up" duration={500} threshold={0.2} distance={20}>
+    <ScrollReveal client:load variant="slide-up" duration={500} threshold={0.2} distance={20} delay={0}>
       <div class="mb-8 md:mb-12 flex items-center gap-6">
         <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--color-text-primary)] whitespace-nowrap">
           About Me
@@ -21,98 +21,126 @@ import { companyLinks } from '../data/links';
       </div>
     </ScrollReveal>
 
-    <ScrollReveal client:load variant="slide-up" duration={600} threshold={0.15} delay={100} distance={25}>
-      <div class="grid md:grid-cols-5 gap-8 md:gap-12 items-start">
-        <!-- Bio Content -->
-        <div class="md:col-span-3 text-[var(--color-text-secondary)] text-md md:text-base leading-relaxed">
+    <div class="grid md:grid-cols-5 gap-8 md:gap-12 items-start">
+      <!-- Bio Content -->
+      <div class="md:col-span-3 text-[var(--color-text-secondary)] text-md md:text-base leading-relaxed">
         
         <!-- Mobile Bio (Shortened) - visible only on mobile -->
-        <div class="md:hidden space-y-4">
-          <p>
-            Hello! I'm Pawel, a software engineer who's been building things for the web since I was 12. I started with Adobe Flash games on <a href="https://www.kongregate.com/accounts/WarriorsBattle" target="_blank" rel="noopener noreferrer" class="keyword-link">Kongregate</a> that reached over 50,000 gameplays, and that early experience sparked a passion that's shaped my entire career.
-          </p>
+        <div class="md:hidden">
+          <ScrollReveal client:load variant="slide-up" duration={600} threshold={0.15} delay={200} distance={25}>
+            <p class="mb-4">
+              Hello! I'm Pawel, a software engineer who's been building things for the web since I was 12. I started with Adobe Flash games on <a href="https://www.kongregate.com/accounts/WarriorsBattle" target="_blank" rel="noopener noreferrer" class="keyword-link">Kongregate</a> that reached over 50,000 gameplays, and that early experience sparked a passion that's shaped my entire career.
+            </p>
+          </ScrollReveal>
           
-          <p>
-            Today, I've built AI-powered health platforms at <a href={companyLinks.sie2} target="_blank" rel="noopener noreferrer" class="keyword-link">a social impact startup</a>, developed machine learning pipelines at <a href={companyLinks.adobe} target="_blank" rel="noopener noreferrer" class="keyword-link">Adobe</a>, and engineered cybersecurity infrastructure for <a href={companyLinks.ndu} target="_blank" rel="noopener noreferrer" class="keyword-link">the Department of Defense</a>. I specialize in full-stack development with a focus on AI integration, vector search, and data engineering.
-          </p>
+          <ScrollReveal client:load variant="slide-up" duration={600} threshold={0.15} delay={400} distance={25}>
+            <p class="mb-4">
+              Today, I've built AI-powered health platforms at <a href={companyLinks.sie2} target="_blank" rel="noopener noreferrer" class="keyword-link">a social impact startup</a>, developed machine learning pipelines at <a href={companyLinks.adobe} target="_blank" rel="noopener noreferrer" class="keyword-link">Adobe</a>, and engineered cybersecurity infrastructure for <a href={companyLinks.ndu} target="_blank" rel="noopener noreferrer" class="keyword-link">the Department of Defense</a>. I specialize in full-stack development with a focus on AI integration, vector search, and data engineering.
+            </p>
+          </ScrollReveal>
         </div>
         
         <!-- Desktop Bio (Full) - visible on tablet and up -->
-        <div class="hidden md:block space-y-4">
-          <p>
-            Hello! I'm Pawel, a software engineer who's been building things for the web since I was 12. Back then, I was creating Adobe Flash games and text-based RPG games, publishing them on <a href="https://www.kongregate.com/accounts/WarriorsBattle" target="_blank" rel="noopener noreferrer" class="keyword-link">Kongregate</a> where they collectively reached over 50,000 gameplays. That early experience of building something people actually used sparked a passion that's shaped my entire career.
-          </p>
+        <div class="hidden md:block">
+          <ScrollReveal client:load variant="slide-up" duration={600} threshold={0.15} delay={200} distance={25}>
+            <p class="mb-4">
+              Hello! I'm Pawel, a software engineer who's been building things for the web since I was 12. Back then, I was creating Adobe Flash games and text-based RPG games, publishing them on <a href="https://www.kongregate.com/accounts/WarriorsBattle" target="_blank" rel="noopener noreferrer" class="keyword-link">Kongregate</a> where they collectively reached over 50,000 gameplays. That early experience of building something people actually used sparked a passion that's shaped my entire career.
+            </p>
+          </ScrollReveal>
           
-          <p>
-            Fast forward to today, and I've built AI-powered health platforms at <a href={companyLinks.sie2} target="_blank" rel="noopener noreferrer" class="keyword-link">a social impact startup</a>, developed machine learning pipelines at <a href={companyLinks.adobe} target="_blank" rel="noopener noreferrer" class="keyword-link">Adobe</a>, and engineered cybersecurity infrastructure for <a href={companyLinks.ndu} target="_blank" rel="noopener noreferrer" class="keyword-link">the Department of Defense</a>. My work focuses on creating systems that are both technically sophisticated and genuinely useful.
-          </p>
+          <ScrollReveal client:load variant="slide-up" duration={600} threshold={0.15} delay={400} distance={25}>
+            <p class="mb-4">
+              Fast forward to today, and I've built AI-powered health platforms at <a href={companyLinks.sie2} target="_blank" rel="noopener noreferrer" class="keyword-link">a social impact startup</a>, developed machine learning pipelines at <a href={companyLinks.adobe} target="_blank" rel="noopener noreferrer" class="keyword-link">Adobe</a>, and engineered cybersecurity infrastructure for <a href={companyLinks.ndu} target="_blank" rel="noopener noreferrer" class="keyword-link">the Department of Defense</a>. My work focuses on creating systems that are both technically sophisticated and genuinely useful.
+            </p>
+          </ScrollReveal>
           
-          <p>
-            Most recently, I've been extracting and parsing terabytes of insurer data to estimate healthcare costs, transforming unstructured medical billing data into structured formats that power an <a href={companyLinks.sie2} target="_blank" rel="noopener noreferrer" class="keyword-link">AI copilot</a>. I specialize in full-stack development with a strong focus on AI integration, vector search, and data engineering, tackling complex problems like semantic search across 50,000+ services and real-time ML inference.
-          </p>
+          <ScrollReveal client:load variant="slide-up" duration={600} threshold={0.15} delay={800} distance={25}>
+            <p class="mb-4">
+              Most recently, I've been extracting and parsing terabytes of insurer data to estimate healthcare costs, transforming unstructured medical billing data into structured formats that power an <a href={companyLinks.sie2} target="_blank" rel="noopener noreferrer" class="keyword-link">AI copilot</a>. I specialize in full-stack development with a strong focus on AI integration, vector search, and data engineering, tackling complex problems like semantic search across 50,000+ services and real-time ML inference.
+            </p>
+          </ScrollReveal>
         </div>
         
-        <p class="text-[var(--color-text-primary)] mt-6">
-          Here are some technologies I've been working with recently:
-        </p>
+        <ScrollReveal client:load variant="slide-up" duration={600} threshold={0.15} delay={600} distance={25} className="md:!delay-[1000ms]">
+          <p class="text-[var(--color-text-primary)] mt-6">
+            Here are some technologies I've been working with recently:
+          </p>
+        </ScrollReveal>
         
         <!-- Skills Grid -->
         <ul class="grid grid-cols-2 gap-2 pt-2 font-mono text-sm">
-          <li class="flex items-center gap-2">
-            <span class="text-[var(--color-accent-primary)]">▹</span>
-            TypeScript / JavaScript
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-[var(--color-accent-primary)]">▹</span>
-            React 19 / Next.js 15
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-[var(--color-accent-primary)]">▹</span>
-            Python / FastAPI
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-[var(--color-accent-primary)]">▹</span>
-            OpenAI / Responses API
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-[var(--color-accent-primary)]">▹</span>
-            PostgreSQL / Prisma
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-[var(--color-accent-primary)]">▹</span>
-            Vector DBs / RAG
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-[var(--color-accent-primary)]">▹</span>
-            Azure Cosmos DB / MongoDB
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-[var(--color-accent-primary)]">▹</span>
-            Docker / GitHub Actions
-          </li>
+          <ScrollReveal client:load variant="slide-up" duration={500} threshold={0.15} delay={800} distance={20} className="md:!delay-[1200ms]">
+            <li class="flex items-center gap-2">
+              <span class="text-[var(--color-accent-primary)]">▹</span>
+              TypeScript / JavaScript
+            </li>
+          </ScrollReveal>
+          <ScrollReveal client:load variant="slide-up" duration={500} threshold={0.15} delay={900} distance={20} className="md:!delay-[1300ms]">
+            <li class="flex items-center gap-2">
+              <span class="text-[var(--color-accent-primary)]">▹</span>
+              React 19 / Next.js 15
+            </li>
+          </ScrollReveal>
+          <ScrollReveal client:load variant="slide-up" duration={500} threshold={0.15} delay={1000} distance={20} className="md:!delay-[1400ms]">
+            <li class="flex items-center gap-2">
+              <span class="text-[var(--color-accent-primary)]">▹</span>
+              Python / FastAPI
+            </li>
+          </ScrollReveal>
+          <ScrollReveal client:load variant="slide-up" duration={500} threshold={0.15} delay={1100} distance={20} className="md:!delay-[1500ms]">
+            <li class="flex items-center gap-2">
+              <span class="text-[var(--color-accent-primary)]">▹</span>
+              OpenAI / Responses API
+            </li>
+          </ScrollReveal>
+          <ScrollReveal client:load variant="slide-up" duration={500} threshold={0.15} delay={1200} distance={20} className="md:!delay-[1600ms]">
+            <li class="flex items-center gap-2">
+              <span class="text-[var(--color-accent-primary)]">▹</span>
+              PostgreSQL / Prisma
+            </li>
+          </ScrollReveal>
+          <ScrollReveal client:load variant="slide-up" duration={500} threshold={0.15} delay={1300} distance={20} className="md:!delay-[1700ms]">
+            <li class="flex items-center gap-2">
+              <span class="text-[var(--color-accent-primary)]">▹</span>
+              Vector DBs / RAG
+            </li>
+          </ScrollReveal>
+          <ScrollReveal client:load variant="slide-up" duration={500} threshold={0.15} delay={1400} distance={20} className="md:!delay-[1800ms]">
+            <li class="flex items-center gap-2">
+              <span class="text-[var(--color-accent-primary)]">▹</span>
+              Azure Cosmos DB / MongoDB
+            </li>
+          </ScrollReveal>
+          <ScrollReveal client:load variant="slide-up" duration={500} threshold={0.15} delay={1500} distance={20} className="md:!delay-[1900ms]">
+            <li class="flex items-center gap-2">
+              <span class="text-[var(--color-accent-primary)]">▹</span>
+              Docker / GitHub Actions
+            </li>
+          </ScrollReveal>
         </ul>
       </div>
       
-      <!-- Profile Image -->
+      <!-- Profile Image - Different delays for mobile (after tech items) and desktop (between paragraphs) -->
       <div class="md:col-span-2 relative group max-w-[280px] md:max-w-none mx-auto md:mx-0">
-        <div class="relative z-10 rounded-lg overflow-hidden border-2 border-[var(--color-accent-primary)] hover:border-[var(--color-accent-secondary)] transition-colors duration-300">
-          <div class="aspect-square bg-[#8b5cf6]">
-            <img 
-              src="/my-picture.png" 
-              alt="Pawel Sloboda" 
-              class="profile-image w-full h-full object-cover"
-              loading="eager"
-              decoding="async"
-            />
+        <ScrollReveal client:load variant="slide-up" duration={600} threshold={0.15} delay={1700} distance={30} className="md:!delay-[600ms]">
+          <div class="relative z-10 rounded-lg overflow-hidden border-2 border-[var(--color-accent-primary)] hover:border-[var(--color-accent-secondary)] transition-colors duration-300">
+            <div class="aspect-square bg-[#8b5cf6]">
+              <img 
+                src="/my-picture.png" 
+                alt="Pawel Sloboda" 
+                class="profile-image w-full h-full object-cover"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <!-- Purple overlay -->
+            <div class="absolute inset-0 bg-[#8b5cf6] mix-blend-screen opacity-60 group-hover:opacity-0 transition-all duration-300"></div>
           </div>
-          <!-- Purple overlay -->
-          <div class="absolute inset-0 bg-[#8b5cf6] mix-blend-screen opacity-60 group-hover:opacity-0 transition-all duration-300"></div>
-        </div>
-        <!-- Background decoration -->
-        <div class="absolute top-5 left-5 w-full h-full border-2 border-[var(--color-accent-primary)] rounded-lg -z-10 group-hover:top-6 group-hover:left-6 transition-all duration-300"></div>
+          <!-- Background decoration -->
+          <div class="absolute top-5 left-5 w-full h-full border-2 border-[var(--color-accent-primary)] rounded-lg -z-10 group-hover:top-6 group-hover:left-6 transition-all duration-300"></div>
+        </ScrollReveal>
       </div>
-      </div>
-    </ScrollReveal>
+    </div>
   </div>
 </section>
 
@@ -157,5 +185,39 @@ import { companyLinks } from '../data/links';
   .keyword-link:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+  }
+
+  /* Responsive delay overrides using CSS custom properties */
+  @media (min-width: 768px) {
+    .md\:\!delay-\[600ms\] {
+      --reveal-delay: 600ms !important;
+    }
+    .md\:\!delay-\[1000ms\] {
+      --reveal-delay: 1000ms !important;
+    }
+    .md\:\!delay-\[1200ms\] {
+      --reveal-delay: 1200ms !important;
+    }
+    .md\:\!delay-\[1300ms\] {
+      --reveal-delay: 1300ms !important;
+    }
+    .md\:\!delay-\[1400ms\] {
+      --reveal-delay: 1400ms !important;
+    }
+    .md\:\!delay-\[1500ms\] {
+      --reveal-delay: 1500ms !important;
+    }
+    .md\:\!delay-\[1600ms\] {
+      --reveal-delay: 1600ms !important;
+    }
+    .md\:\!delay-\[1700ms\] {
+      --reveal-delay: 1700ms !important;
+    }
+    .md\:\!delay-\[1800ms\] {
+      --reveal-delay: 1800ms !important;
+    }
+    .md\:\!delay-\[1900ms\] {
+      --reveal-delay: 1900ms !important;
+    }
   }
 </style>
