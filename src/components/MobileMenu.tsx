@@ -1,8 +1,38 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { socialLinks } from '../data/links';
+import MobileChatView from './chatbot/MobileChatView';
+import type { Message } from '../types/chatbot';
+import {
+  loadChatHistory,
+  saveChatHistory,
+  clearChatHistory,
+  createMessage
+} from '../utils/chatbotHelpers';
+import { generateResponse } from '../utils/responseEngine';
+import { chatbotConfig } from '../data/chatbotData';
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isChatbotMode, setIsChatbotMode] = useState(false);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [isTyping, setIsTyping] = useState(false);
+
+  // Load chat history on mount
+  useEffect(() => {
+    const history = loadChatHistory();
+    setMessages(history);
+  }, []);
+
+  // Save chat history whenever messages change
+  useEffect(() => {
+    if (messages.length > 0) {
+      saveChatHistory(messages);
+      // Notify badge update
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('chatbotMessagesUpdated'));
+      }
+    }
+  }, [messages]);
 
   // Prevent body scroll and add blur when menu is open
   useEffect(() => {
@@ -12,6 +42,8 @@ export default function MobileMenu() {
     } else {
       document.body.style.overflow = 'unset';
       document.body.removeAttribute('data-mobile-menu-open');
+      // Reset chatbot mode when menu closes
+      setIsChatbotMode(false);
     }
     return () => {
       document.body.style.overflow = 'unset';
@@ -23,6 +55,46 @@ export default function MobileMenu() {
   const handleLinkClick = () => {
     setIsOpen(false);
   };
+
+  // Open chatbot mode
+  const handleOpenChatbot = () => {
+    setIsChatbotMode(true);
+  };
+
+  // Close chatbot and return to menu
+  const handleCloseChatbot = () => {
+    setIsChatbotMode(false);
+  };
+
+  // Send message handler
+  const handleSendMessage = useCallback(async (content: string) => {
+    // Create user message
+    const userMessage = createMessage('user', content);
+    setMessages(prev => [...prev, userMessage]);
+    setIsTyping(true);
+
+    // Simulate typing delay
+    await new Promise(resolve => setTimeout(resolve, chatbotConfig.typingDelay));
+
+    // Generate response
+    const responseText = generateResponse(content);
+
+    // Simulate response delay
+    await new Promise(resolve => setTimeout(resolve, chatbotConfig.responseDelay));
+
+    // Create bot message
+    const botMessage = createMessage('bot', responseText);
+    setMessages(prev => [...prev, botMessage]);
+    setIsTyping(false);
+  }, []);
+
+  // Reset conversation
+  const handleReset = useCallback(() => {
+    clearChatHistory();
+    const welcomeMessage = createMessage('bot', chatbotConfig.welcomeMessage);
+    setMessages([welcomeMessage]);
+    setIsTyping(false);
+  }, []);
 
   return (
     <>
@@ -64,12 +136,22 @@ export default function MobileMenu() {
 
         {/* Menu Content */}
         <nav
-          className={`absolute right-0 top-0 bottom-0 h-screen w-[75vw] bg-[var(--color-bg-primary)] flex flex-col items-center justify-center transition-transform duration-300 ${
+          className={`absolute right-0 top-0 bottom-0 h-screen w-[75vw] bg-[var(--color-bg-primary)] flex flex-col transition-transform duration-300 ${
             isOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
           aria-label="Mobile navigation"
         >
-          <ul className="flex flex-col items-center gap-6 text-center w-full px-8">
+          {/* Chatbot Mode */}
+          {isChatbotMode ? (
+            <MobileChatView
+              messages={messages}
+              isTyping={isTyping}
+              onSendMessage={handleSendMessage}
+              onClose={handleCloseChatbot}
+              onReset={handleReset}
+            />
+          ) : (
+            <ul className="flex flex-col items-center gap-6 text-center w-full px-8 justify-center h-full">
             <li className="w-full">
               <a
                 href="#about"
@@ -112,7 +194,7 @@ export default function MobileMenu() {
             </li>
             <li className="w-full">
               <button
-                onClick={handleLinkClick}
+                onClick={handleOpenChatbot}
                 className="flex flex-col items-center gap-2 text-[var(--color-text-primary)] hover:text-[var(--color-accent-primary)] transition-colors py-2 group w-full"
               >
                 <span className="text-[var(--color-accent-primary)] text-sm font-mono">05.</span>
@@ -134,6 +216,7 @@ export default function MobileMenu() {
               </a>
             </li>
           </ul>
+          )}
         </nav>
       </div>
     </>

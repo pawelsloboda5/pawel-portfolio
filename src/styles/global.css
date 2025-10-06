@@ -30,6 +30,61 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Increase font sizes on larger viewports (excluding footer and sidebars) */
+@media (min-width: 768px) {
+  body main,
+  body section:not(footer):not(.sidebar) {
+    font-size: 1.0625rem; /* 17px */
+  }
+  
+  body main h1,
+  body section:not(footer):not(.sidebar) h1 {
+    font-size: 1.125em;
+  }
+  
+  body main h2,
+  body section:not(footer):not(.sidebar) h2 {
+    font-size: 1.1em;
+  }
+  
+  body main h3,
+  body section:not(footer):not(.sidebar) h3 {
+    font-size: 1.075em;
+  }
+  
+  body main p,
+  body section:not(footer):not(.sidebar) p {
+    font-size: 1.0625rem; /* 17px */
+  }
+}
+
+@media (min-width: 1024px) {
+  body main,
+  body section:not(footer):not(.sidebar) {
+    font-size: 1.125rem; /* 18px */
+  }
+  
+  body main h1,
+  body section:not(footer):not(.sidebar) h1 {
+    font-size: 1.15em;
+  }
+  
+  body main h2,
+  body section:not(footer):not(.sidebar) h2 {
+    font-size: 1.125em;
+  }
+  
+  body main h3,
+  body section:not(footer):not(.sidebar) h3 {
+    font-size: 1.1em;
+  }
+  
+  body main p,
+  body section:not(footer):not(.sidebar) p {
+    font-size: 1.125rem; /* 18px */
+  }
+}
+
 /* Respect reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -132,4 +187,20 @@ body[data-mobile-menu-open="true"] > :not(.mobile-menu-overlay) {
 body:not([data-mobile-menu-open]) > * {
   filter: blur(0);
   transition: filter 0.3s ease-in-out;
+}
+
+/* Chatbot typing indicator animation */
+@keyframes typingDot {
+  0%, 60%, 100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}
+
+.animate-typing-dot {
+  animation: typingDot 1.4s ease-in-out infinite;
 }

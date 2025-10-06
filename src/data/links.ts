@@ -8,7 +8,8 @@ export const socialLinks = {
   linkedin: 'https://www.linkedin.com/in/pawel-sloboda-383181216/',
   twitter: 'https://twitter.com/pawelsloboda',
   email: 'mailto:pawelsloboda5@gmail.com',
-  resume: '/FULL-STACK-AZURE-ENGINEER-PAWEL-SLOBODA.pdf'
+  resume: '/FULL-STACK-AZURE-ENGINEER-PAWEL-SLOBODA.pdf',
+  portfolioRepo: 'https://github.com/pawelsloboda5/pawel-portfolio'
 } as const;
 
 export const companyLinks = {
@@ -16,7 +17,8 @@ export const companyLinks = {
   adobe: 'https://www.adobe.com',
   ndu: 'https://www.ndu.edu',
   HealthCareNavigator: 'https://healthcare-cost-navigator.vercel.app/',
-  DigitizeMD: 'https://www.digitizemd.com/'
+  DigitizeMD: 'https://www.digitizemd.com/',
+  SecuSparkoffline_PWA: 'https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps/'
 } as const;
 
 export const projectGithubLinks = {

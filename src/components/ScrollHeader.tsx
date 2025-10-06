@@ -11,11 +11,8 @@ export default function ScrollHeader({ children }: { children: React.ReactNode }
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      console.log('Scroll event:', { currentScrollY, lastScrollY: lastScrollY.current, isVisible });
-      
       // Always show header at the top
       if (currentScrollY < 10) {
-        console.log('At top, showing header');
         setIsVisible(true);
         lastScrollY.current = currentScrollY;
         return;
@@ -25,16 +22,12 @@ export default function ScrollHeader({ children }: { children: React.ReactNode }
       const isScrollingUp = currentScrollY < lastScrollY.current;
       const isScrollingDown = currentScrollY > lastScrollY.current;
       
-      console.log('Direction:', { isScrollingUp, isScrollingDown });
-      
       // Show header when scrolling up
       if (isScrollingUp) {
-        console.log('Scrolling up, showing header');
         setIsVisible(true);
       } 
       // Hide header when scrolling down past 100px
       else if (isScrollingDown && currentScrollY > 100) {
-        console.log('Scrolling down, hiding header');
         setIsVisible(false);
       }
       

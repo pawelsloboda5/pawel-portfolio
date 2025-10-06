@@ -1,0 +1,15 @@
+# robots.txt for Pawel Sloboda Portfolio
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://pawelsloboda.dev/sitemap-index.xml
+
+# Disallow admin or draft pages if any
+Disallow: /drafts/
+Disallow: /admin/
+Disallow: /*.json$
+
+# Crawl delay (optional, helps with rate limiting)
+Crawl-delay: 1

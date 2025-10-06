@@ -1,43 +1,86 @@
 ---
 /* Import Tailwind (required) */
 import "../styles/global.css";
+import "../styles/chatbot.css";
 import MobileMenu from "../components/MobileMenu";
 import PageLoadAnimation from "../components/PageLoadAnimation";
 import SidebarReveal from "../components/SidebarReveal";
 import ScrollProgress from "../components/ScrollProgress";
 import ScrollHeader from "../components/ScrollHeader";
+import Chatbot from "../components/chatbot/Chatbot";
+import ChatbotPulse from "../components/chatbot/ChatbotPulse";
 import { socialLinks } from "../data/links";
+import { 
+  siteConfig, 
+  generatePersonSchema, 
+  generateWebsiteSchema,
+  generatePortfolioSchema,
+  generateCanonicalUrl,
+  generateKeywords
+} from "../utils/seo";
 
 /* Optional props so pages can pass title/description if needed */
 const {
   title = "Pawel | Portfolio",
   description = "Full-stack engineer building fast, accessible, AI-powered apps.",
 } = Astro.props;
+
+// Generate structured data
+const personSchema = generatePersonSchema();
+const websiteSchema = generateWebsiteSchema();
+const portfolioSchema = generatePortfolioSchema();
+const canonicalUrl = generateCanonicalUrl(Astro.url.pathname);
+const keywords = generateKeywords();
 ---
 <!doctype html>
 <html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- Primary Meta Tags -->
     <title>{title}</title>
+    <meta name="title" content={title} />
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content={siteConfig.author} />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalUrl} />
 
     <!-- Open Graph / Social Media Preview -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/portfolio-logo.png" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={`${siteConfig.url}/portfolio-logo.png`} />
     <meta property="og:image:alt" content="Pawel Sloboda - Full-Stack Software Engineer" />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:locale" content="en_US" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="/portfolio-logo.png" />
+    <meta name="twitter:image" content={`${siteConfig.url}/portfolio-logo.png`} />
     <meta name="twitter:image:alt" content="Pawel Sloboda - Full-Stack Software Engineer" />
+    <meta name="twitter:creator" content="@pawelsloboda" />
 
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/portfolio-logo.png" />
+    
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap-index.xml" />
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(portfolioSchema)} />
   </head>
   <body class="h-full bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] antialiased">
     <!-- Skip link for a11y -->
@@ -133,16 +176,23 @@ const {
       </aside>
     </SidebarReveal>
 
-    <!-- Right Sidebar - Chatbot & Email with reveal animation -->
+    <!-- Right Sidebar - Email with reveal animation -->
     <SidebarReveal client:load side="right" delay={1400}>
-      <aside class="hidden md:flex fixed right-8 bottom-0 flex-col items-center gap-6 z-30" aria-label="Chatbot and email contact">
-      <!-- Chatbot Icon -->
-      <button 
-        aria-label="Open AI Chatbot"
-        class="text-[var(--color-accent-primary)] hover:text-[var(--color-accent-secondary)] hover:-translate-y-1 hover:scale-110 transition-all duration-200 cursor-pointer group"
-      >
-        <img src="/robot.svg" alt="AI Chatbot" width="28" height="28" class="opacity-90 group-hover:opacity-100 transition-opacity" />
-      </button>
+      <aside class="hidden md:flex fixed right-8 bottom-0 flex-col items-center gap-6 z-30" aria-label="Email contact">
+      <!-- Chatbot Icon with Pulse and Badge -->
+      <div id="chatbot-sidebar-wrapper">
+        <ChatbotPulse client:load>
+          <button 
+            id="chatbot-trigger"
+            aria-label="Open AI Chatbot"
+            class="relative text-[var(--color-accent-primary)] hover:text-[var(--color-accent-secondary)] hover:-translate-y-1 hover:scale-110 transition-all duration-200 cursor-pointer group"
+          >
+            <img src="/robot.svg" alt="AI Chatbot" width="28" height="28" class="opacity-90 group-hover:opacity-100 transition-opacity" />
+            <!-- Message count badge (populated by script) -->
+            <span id="chatbot-badge" class="hidden absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full items-center justify-center text-[10px] font-bold text-white"></span>
+          </button>
+        </ChatbotPulse>
+      </div>
       
       <!-- Spacer for visual separation -->
       <div class="h-2"></div>
@@ -174,9 +224,144 @@ const {
 
     <!-- Footer -->
     <footer class="mt-32">
-      <div class="mx-auto max-w-6xl px-6 py-8 text-sm text-[var(--color-text-muted)] text-center">
-        <p>© {new Date().getFullYear()} Pawel Sloboda. All rights reserved.</p>
+      <div class="mx-auto max-w-6xl px-6 py-8 text-center">
+        <!-- Social Links (Mobile Only) -->
+        <div class="flex md:hidden justify-center gap-6 mb-8">
+          <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-[var(--color-text-secondary)] hover:text-[var(--color-accent-primary)] transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+          <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-[var(--color-text-secondary)] hover:text-[var(--color-accent-primary)] transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+        </div>
+
+        <!-- Attribution and Copyright -->
+        <div class="space-y-2">
+          <a 
+            href={socialLinks.portfolioRepo}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block text-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent-primary)] transition-colors font-mono"
+          >
+            Designed & Built by Pawel Sloboda
+          </a>
+          <p class="text-xs text-[var(--color-text-muted)]">
+            © {new Date().getFullYear()} Pawel Sloboda. Open source for personal use only.
+          </p>
+        </div>
       </div>
     </footer>
+
+    <!-- Chatbot (Desktop) -->
+    <Chatbot client:load variant="desktop" />
+
+    <!-- Connect chatbot trigger button and badge -->
+    <script is:inline>
+      // Wait for DOM to be fully loaded
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initChatbot);
+      } else {
+        initChatbot();
+      }
+
+      function initChatbot() {
+        const trigger = document.getElementById('chatbot-trigger');
+        const badge = document.getElementById('chatbot-badge');
+        const sidebarWrapper = document.getElementById('chatbot-sidebar-wrapper');
+        
+        if (trigger) {
+          trigger.addEventListener('click', () => {
+            // Hide badge immediately when clicked
+            if (badge) {
+              badge.classList.add('hidden');
+              badge.classList.remove('flex');
+            }
+            // Remove pulse class immediately
+            if (sidebarWrapper) {
+              sidebarWrapper.classList.remove('chatbot-has-unread');
+            }
+            window.dispatchEvent(new CustomEvent('openChatbot'));
+          });
+        }
+
+        // Update badge and pulse with UNREAD message count from localStorage
+        function updateBadge() {
+          if (!badge || !sidebarWrapper) return;
+          
+          try {
+            const history = localStorage.getItem('chatbot-history');
+            const lastOpened = localStorage.getItem('chatbot-last-opened');
+            
+            if (history) {
+              const messages = JSON.parse(history);
+              
+              if (messages.length === 0) {
+                // No messages - hide badge
+                badge.classList.add('hidden');
+                badge.classList.remove('flex');
+                sidebarWrapper.classList.remove('chatbot-has-unread');
+                return;
+              }
+              
+              // Check if there are unread messages
+              let hasUnread = true;
+              if (lastOpened) {
+                const lastOpenedTime = parseInt(lastOpened, 10);
+                const latestMessageTime = Math.max(...messages.map(m => m.timestamp));
+                hasUnread = latestMessageTime > lastOpenedTime;
+              }
+              
+              if (hasUnread) {
+                // Show badge and pulse
+                badge.textContent = messages.length > 9 ? '9+' : messages.length.toString();
+                badge.classList.remove('hidden');
+                badge.classList.add('flex');
+                sidebarWrapper.classList.add('chatbot-has-unread');
+              } else {
+                // Messages exist but all are read - hide badge
+                badge.classList.add('hidden');
+                badge.classList.remove('flex');
+                sidebarWrapper.classList.remove('chatbot-has-unread');
+              }
+            } else {
+              badge.classList.add('hidden');
+              badge.classList.remove('flex');
+              sidebarWrapper.classList.remove('chatbot-has-unread');
+            }
+          } catch (e) {
+            console.error('Error reading chatbot history:', e);
+          }
+        }
+
+        // Update badge initially and when storage changes
+        updateBadge();
+        window.addEventListener('storage', updateBadge);
+        
+        // Listen for custom event to update badge after messages
+        window.addEventListener('chatbotMessagesUpdated', updateBadge);
+
+        // Hide sidebar robot when chatbot is fully open (not minimized)
+        window.addEventListener('chatbotStateChange', function(event) {
+          if (sidebarWrapper && event.detail) {
+            const isOpen = event.detail.isOpen;
+            const isMinimized = event.detail.isMinimized;
+            // Hide sidebar robot only when chatbot is open AND NOT minimized
+            if (isOpen && !isMinimized) {
+              sidebarWrapper.style.display = 'none';
+              // Also remove pulse/badge when open
+              if (badge) {
+                badge.classList.add('hidden');
+                badge.classList.remove('flex');
+              }
+              sidebarWrapper.classList.remove('chatbot-has-unread');
+            } else {
+              sidebarWrapper.style.display = 'block';
+              // Re-check if should show badge/pulse
+              updateBadge();
+            }
+          }
+        });
+      }
+    </script>
   </body>
 </html>

@@ -231,6 +231,43 @@ import { featuredProjects } from '../data/featuredProjects';
     transform: scaleX(1);
   }
 
+  /* Keyword Link - Highlighted link style */
+  .project-description a.keyword-link {
+    color: #a78bfa;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    text-shadow: 0 0 12px rgba(167, 139, 250, 0.6), 0 0 24px rgba(167, 139, 250, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 2px 4px;
+    border-radius: 3px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(167, 139, 250, 0.1));
+  }
+
+  .project-description a.keyword-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-secondary));
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .project-description a.keyword-link:hover {
+    color: #c4b5fd;
+    text-shadow: 0 0 16px rgba(196, 181, 253, 0.8), 0 0 32px rgba(196, 181, 253, 0.4);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(167, 139, 250, 0.2));
+  }
+
+  .project-description a.keyword-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
   .project-description p {
     margin: 0;
   }
