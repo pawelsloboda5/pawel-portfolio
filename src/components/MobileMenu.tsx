@@ -64,7 +64,7 @@ export default function MobileMenu() {
 
         {/* Menu Content */}
         <nav
-          className={`absolute right-0 top-0 bottom-0 h-screen w-3/4 bg-[var(--color-bg-primary)] flex flex-col items-center justify-center transition-transform duration-300 ${
+          className={`absolute right-0 top-0 bottom-0 h-screen w-[75vw] bg-[var(--color-bg-primary)] flex flex-col items-center justify-center transition-transform duration-300 ${
             isOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
           aria-label="Mobile navigation"
@@ -109,6 +109,18 @@ export default function MobileMenu() {
                 <span className="text-[var(--color-accent-primary)] text-sm font-mono">04.</span>
                 <span className="text-xl tracking-wide font-light">Contact</span>
               </a>
+            </li>
+            <li className="w-full">
+              <button
+                onClick={handleLinkClick}
+                className="flex flex-col items-center gap-2 text-[var(--color-text-primary)] hover:text-[var(--color-accent-primary)] transition-colors py-2 group w-full"
+              >
+                <span className="text-[var(--color-accent-primary)] text-sm font-mono">05.</span>
+                <span className="text-xl tracking-wide font-light flex items-center gap-2">
+                  <img src="/robot.svg" alt="" width="24" height="24" className="opacity-90 group-hover:opacity-100 transition-opacity" />
+                  AI Chatbot
+                </span>
+              </button>
             </li>
             <li className="w-full pt-8">
               <a

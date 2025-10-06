@@ -133,9 +133,20 @@ const {
       </aside>
     </SidebarReveal>
 
-    <!-- Right Sidebar - Email with reveal animation -->
+    <!-- Right Sidebar - Chatbot & Email with reveal animation -->
     <SidebarReveal client:load side="right" delay={1400}>
-      <aside class="hidden md:flex fixed right-8 bottom-0 flex-col items-center gap-6 z-30" aria-label="Email contact">
+      <aside class="hidden md:flex fixed right-8 bottom-0 flex-col items-center gap-6 z-30" aria-label="Chatbot and email contact">
+      <!-- Chatbot Icon -->
+      <button 
+        aria-label="Open AI Chatbot"
+        class="text-[var(--color-accent-primary)] hover:text-[var(--color-accent-secondary)] hover:-translate-y-1 hover:scale-110 transition-all duration-200 cursor-pointer group"
+      >
+        <img src="/robot.svg" alt="AI Chatbot" width="28" height="28" class="opacity-90 group-hover:opacity-100 transition-opacity" />
+      </button>
+      
+      <!-- Spacer for visual separation -->
+      <div class="h-2"></div>
+      
       <a 
         href={socialLinks.email}
         class="text-[var(--color-text-secondary)] hover:text-[var(--color-accent-primary)] hover:-translate-y-1 transition-all duration-200 [writing-mode:vertical-rl] text-sm tracking-widest font-mono cursor-pointer"
