@@ -89,7 +89,7 @@ import { featuredProjects } from '../data/featuredProjects';
     padding: 0;
   }
 
-  .featured-project:last-of-type {
+  ul > :last-child .featured-project {
     margin-bottom: 0;
   }
 
@@ -371,7 +371,7 @@ import { featuredProjects } from '../data/featuredProjects';
   @media (max-width: 768px) {
     .featured-project {
       box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7) !important;
-      margin-bottom: 80px !important;
+      margin-bottom: 100px !important;
       padding: 0 !important;
       border-radius: 8px;
       overflow: hidden;
@@ -380,14 +380,14 @@ import { featuredProjects } from '../data/featuredProjects';
       display: block;
     }
 
-    .featured-project:last-of-type {
+    ul > :last-child .featured-project {
       margin-bottom: 0 !important;
     }
 
     .featured-project-odd .project-content,
     .featured-project-even .project-content {
       position: relative !important;
-      padding: 40px 30px !important;
+      padding: 35px 25px !important;
       text-align: left !important;
       display: flex !important;
       flex-direction: column !important;
@@ -511,14 +511,14 @@ import { featuredProjects } from '../data/featuredProjects';
 
   @media (max-width: 480px) {
     .featured-project {
-      margin-bottom: 60px !important;
+      margin-bottom: 80px !important;
       min-height: auto;
       position: relative;
     }
 
     .featured-project-odd .project-content,
     .featured-project-even .project-content {
-      padding: 35px 25px !important;
+      padding: 30px 20px !important;
       min-height: auto;
       position: relative !important;
       z-index: 5 !important;

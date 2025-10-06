@@ -46,6 +46,7 @@ export default function SidebarReveal({
           opacity: ${isVisible ? 1 : 0};
           transform: ${isVisible ? 'translateX(0)' : `translateX(${translateX})`};
           transition: opacity 600ms cubic-bezier(0.4, 0, 0.2, 1), transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+          pointer-events: ${isVisible ? 'auto' : 'none'};
         }
 
         /* Hide sidebar on mobile devices */

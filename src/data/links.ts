@@ -4,8 +4,8 @@
  */
 
 export const socialLinks = {
-  github: 'https://github.com/psloboda',
-  linkedin: 'https://www.linkedin.com/in/pawel-sloboda',
+  github: 'https://github.com/pawelsloboda5',
+  linkedin: 'https://www.linkedin.com/in/pawel-sloboda-383181216/',
   twitter: 'https://twitter.com/pawelsloboda',
   email: 'mailto:pawelsloboda5@gmail.com',
   resume: '/FULL-STACK-AZURE-ENGINEER-PAWEL-SLOBODA.pdf'
