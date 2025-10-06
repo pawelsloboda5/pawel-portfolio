@@ -1,18 +1,33 @@
 ---
 // Experience Section - Work history
 import ExperienceTabs from './ExperienceTabs';
+import ScrollReveal from './ScrollReveal';
 ---
 
-<section id="experience" class="py-24 scroll-mt-20">
+<section id="experience" class="scroll-mt-20">
   <div class="w-full max-w-4xl mx-auto">
     <!-- Section Header -->
-    <h2 class="flex items-center text-3xl md:text-4xl font-bold text-[var(--color-text-primary)] mb-12">
-      <span class="text-[var(--color-accent-primary)] font-mono text-2xl mr-3">02.</span>
-      Where I've Worked
-      <span class="ml-6 h-px flex-1 bg-[var(--color-border)]"></span>
-    </h2>
+    <ScrollReveal client:load variant="slide-up" duration={500} threshold={0.2} distance={20}>
+      <div class="mb-8 md:mb-12">
+        <div class="inline-flex items-center gap-3 mb-4">
+          <div class="w-2 h-2 rounded-full bg-[var(--color-accent-primary)] animate-pulse"></div>
+          <span class="text-xs font-mono text-[var(--color-accent-primary)] uppercase tracking-wider">Experience</span>
+        </div>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--color-text-primary)]">
+          Where I've Worked
+        </h2>
+        <!-- Unique decorative element -->
+        <div class="mt-6 flex items-center gap-4">
+          <div class="h-1 w-12 bg-gradient-to-r from-[var(--color-accent-primary)] to-transparent rounded-full"></div>
+          <div class="h-1 w-8 bg-gradient-to-r from-[var(--color-accent-primary)] to-transparent rounded-full opacity-60"></div>
+          <div class="h-1 w-4 bg-gradient-to-r from-[var(--color-accent-primary)] to-transparent rounded-full opacity-30"></div>
+        </div>
+      </div>
+    </ScrollReveal>
 
     <!-- Experience Tabs Component (React) -->
-    <ExperienceTabs client:load />
+    <ScrollReveal client:load variant="slide-up" duration={600} threshold={0.15} delay={100} distance={25}>
+      <ExperienceTabs client:load />
+    </ScrollReveal>
   </div>
 </section>

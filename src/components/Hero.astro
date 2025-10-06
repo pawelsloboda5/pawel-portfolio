@@ -1,49 +1,51 @@
 ---
 // Hero Section - Landing introduction
+import PageLoadAnimation from './PageLoadAnimation';
 ---
 
-<section class="min-h-[calc(100vh-4rem)] flex items-center justify-center py-20">
+<section class="min-h-[calc(100vh-4rem)] flex items-center justify-center py-12 md:py-20">
   <div class="w-full max-w-4xl">
-    <div class="space-y-6 animate-fade-in-up">
+    <div class="space-y-4 md:space-y-6">
       <!-- Greeting -->
-      <p class="text-[var(--color-accent-primary)] font-mono text-base md:text-lg" style="animation-delay: 0.1s;">
-        Hi, my name is
-      </p>
+      <PageLoadAnimation client:load delay={800} variant="slide-up" distance={20}>
+        <p class="text-[var(--color-accent-primary)] font-mono text-base md:text-lg">
+          Hi, my name is
+        </p>
+      </PageLoadAnimation>
       
       <!-- Name -->
-      <h1 
-        class="text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--color-text-primary)] leading-tight"
-        style="animation-delay: 0.2s;"
-      >
-        Pawel Sloboda.
-      </h1>
+      <PageLoadAnimation client:load delay={900} variant="slide-up" distance={20}>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--color-text-primary)] leading-tight">
+          Pawel Sloboda.
+        </h1>
+      </PageLoadAnimation>
       
       <!-- Tagline -->
-      <h2 
-        class="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--color-text-secondary)] leading-tight"
-        style="animation-delay: 0.3s;"
-      >
-        I build things for the web.
-      </h2>
+      <PageLoadAnimation client:load delay={1000} variant="slide-up" distance={20}>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--color-text-secondary)] leading-tight">
+          I build things for the web.
+        </h2>
+      </PageLoadAnimation>
       
       <!-- Description -->
-      <p 
-        class="max-w-2xl text-lg md:text-xl text-[var(--color-text-secondary)] leading-relaxed"
-        style="animation-delay: 0.4s;"
-      >
-        I'm a full-stack software engineer specializing in building exceptional digital experiences. 
-        Currently, I'm focused on creating accessible, scalable, and AI-powered applications that make a difference.
-      </p>
+      <PageLoadAnimation client:load delay={1100} variant="slide-up" distance={20}>
+        <p class="max-w-2xl text-base md:text-lg lg:text-xl text-[var(--color-text-secondary)] leading-relaxed">
+          I'm a full-stack software engineer specializing in building exceptional digital experiences. 
+          Currently, I'm focused on creating accessible, scalable, and AI-powered applications that make a difference.
+        </p>
+      </PageLoadAnimation>
       
       <!-- CTA Button -->
-      <div class="pt-6" style="animation-delay: 0.5s;">
-        <a 
-          href="#projects"
-          class="inline-block border-2 border-[var(--color-accent-primary)] text-[var(--color-accent-primary)] px-8 py-4 rounded-md font-medium hover:bg-[var(--color-accent-primary)]/10 hover:shadow-[0_0_20px_rgba(167,139,250,0.3)] transition-all duration-300"
-        >
-          View My Work
-        </a>
-      </div>
+      <PageLoadAnimation client:load delay={1200} variant="slide-up" distance={20}>
+        <div class="pt-4 md:pt-6">
+          <a 
+            href="#projects"
+            class="inline-block border-2 border-[var(--color-accent-primary)] text-[var(--color-accent-primary)] px-6 py-3 md:px-8 md:py-4 rounded-md font-medium hover:bg-[var(--color-accent-primary)]/10 hover:shadow-[0_0_20px_rgba(167,139,250,0.3)] transition-all duration-300"
+          >
+            View My Work
+          </a>
+        </div>
+      </PageLoadAnimation>
     </div>
   </div>
 </section>

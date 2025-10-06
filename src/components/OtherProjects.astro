@@ -1,0 +1,94 @@
+---
+// Other Noteworthy Projects Section - Grid of smaller projects
+import ScrollReveal from './ScrollReveal';
+import ProjectCard from './ProjectCard';
+---
+
+<div class="mt-24 md:mt-32">
+  <ScrollReveal client:load variant="slide-up" duration={500} threshold={0.2} distance={20}>
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-[var(--color-text-primary)] mb-4">
+        Other Noteworthy Projects
+      </h2>
+      <a 
+        href="/archive" 
+        class="inline-flex items-center gap-2 text-[var(--color-accent-primary)] hover:underline font-mono text-sm"
+      >
+        view the archive
+      </a>
+    </div>
+  </ScrollReveal>
+
+  <!-- Projects Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <ProjectCard 
+      client:load
+      title="Integrating Algolia Search with WordPress Multisite"
+      description="Building a custom multisite compatible WordPress plugin to build global search with Algolia"
+      techStack={["Algolia", "WordPress", "PHP"]}
+      githubUrl="https://github.com"
+      externalUrl="https://project.com"
+      delay={0}
+    />
+    
+    <ProjectCard 
+      client:load
+      title="Time to Have More Fun"
+      description="A single page web app for helping me choose where to travel, built with Next.js, Firebase, and Tailwind CSS"
+      techStack={["Next.js", "Tailwind CSS", "Firebase"]}
+      githubUrl="https://github.com"
+      externalUrl="https://project.com"
+      delay={100}
+    />
+    
+    <ProjectCard 
+      client:load
+      title="Building a Headless Mobile App CMS From Scratch"
+      description="Find out how we built a custom headless CMS with Node, Express, and Firebase for a project at Upstatement"
+      techStack={["Node", "Express", "Firebase", "Vue"]}
+      externalUrl="https://project.com"
+      delay={200}
+    />
+    
+    <ProjectCard 
+      client:load
+      title="OctoProfile"
+      description="A nicer look at your GitHub profile and repo stats. Includes data visualizations of your top languages, starred repositories, and sort through your top repos by number of stars, forks, and size."
+      techStack={["Next.js", "Chart.js", "GitHub API"]}
+      githubUrl="https://github.com"
+      externalUrl="https://project.com"
+      delay={300}
+    />
+    
+    <ProjectCard 
+      client:load
+      title="Google Keep Clone"
+      description="A simple Google Keep clone built with Vue and Firebase."
+      techStack={["Vue", "Firebase"]}
+      githubUrl="https://github.com"
+      externalUrl="https://project.com"
+      delay={400}
+    />
+    
+    <ProjectCard 
+      client:load
+      title="Apple Music Embeddable Web Player Widget"
+      description="Embeddable web player widget for Apple Music that lets users log in and listen to full song playback in the browser leveraging MusicKit.js."
+      techStack={["MusicKit.js", "JS", "SCSS"]}
+      externalUrl="https://project.com"
+      delay={500}
+    />
+  </div>
+
+  <!-- Show More Button -->
+  <ScrollReveal client:load variant="fade" duration={500} threshold={0.2}>
+    <div class="text-center mt-12">
+      <a 
+        href="/archive"
+        class="inline-block border-2 border-[var(--color-accent-primary)] text-[var(--color-accent-primary)] px-8 py-3 rounded-md font-medium hover:bg-[var(--color-accent-primary)]/10 transition-all duration-300"
+      >
+        Show More
+      </a>
+    </div>
+  </ScrollReveal>
+</div>

@@ -72,9 +72,6 @@ export default function MobileMenu() {
                 onClick={handleLinkClick}
                 className="block text-[var(--color-text-secondary)] hover:text-[var(--color-accent-primary)] transition-colors text-lg py-2"
               >
-                <span className="text-[var(--color-accent-primary)] font-mono text-sm block mb-1">
-                  01.
-                </span>
                 About
               </a>
             </li>
@@ -84,9 +81,6 @@ export default function MobileMenu() {
                 onClick={handleLinkClick}
                 className="block text-[var(--color-text-secondary)] hover:text-[var(--color-accent-primary)] transition-colors text-lg py-2"
               >
-                <span className="text-[var(--color-accent-primary)] font-mono text-sm block mb-1">
-                  02.
-                </span>
                 Experience
               </a>
             </li>
@@ -96,9 +90,6 @@ export default function MobileMenu() {
                 onClick={handleLinkClick}
                 className="block text-[var(--color-text-secondary)] hover:text-[var(--color-accent-primary)] transition-colors text-lg py-2"
               >
-                <span className="text-[var(--color-accent-primary)] font-mono text-sm block mb-1">
-                  03.
-                </span>
                 Projects
               </a>
             </li>
@@ -108,9 +99,6 @@ export default function MobileMenu() {
                 onClick={handleLinkClick}
                 className="block text-[var(--color-text-secondary)] hover:text-[var(--color-accent-primary)] transition-colors text-lg py-2"
               >
-                <span className="text-[var(--color-accent-primary)] font-mono text-sm block mb-1">
-                  04.
-                </span>
                 Contact
               </a>
             </li>

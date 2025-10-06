@@ -47,9 +47,35 @@ The website uses a deep purple/violet theme for uniqueness while maintaining pro
 
 ### Interactive Components (React)
 - **ExperienceTabs.tsx:** Manages state for job history display with ARIA support
-- **MobileMenu.tsx:** Hamburger menu for mobile navigation with smooth transitions
+- **MobileMenu.tsx:** Hamburger menu for mobile navigation with smooth transitions and body scroll lock
+- **ScrollReveal.tsx:** Reusable scroll-triggered animation component with configurable variants, duration, delay, threshold, and distance
+- **PageLoadAnimation.tsx:** Sequential page load animations for header and hero elements
+- **SidebarReveal.tsx:** Specialized sidebar reveal animations with directional slides
+- **ProjectCard.tsx:** Individual project card animations with stagger support
 
 ## Key Features
+
+### Scroll Animations
+The portfolio implements a sophisticated, performant animation system:
+
+**Page Load Sequence:**
+1. **Header Navigation (100-600ms):** Logo and nav items animate sequentially from left to right with slide-down effect
+2. **Hero Section (800-1200ms):** Introduction elements reveal with staggered slide-up animations
+3. **Sidebars (1400ms):** Left and right sidebars slide in from their respective sides
+
+**Scroll-Triggered Animations:**
+- **Intersection Observer API:** Efficient viewport detection without scroll event listeners
+- **Multi-level animations:** Both section-level and component-level animations
+- **Configurable variants:** fade, slide-up, slide-down, slide-left, slide-right, scale
+- **Responsive timing:** Animations adapt to viewport size
+- **Reduced motion support:** Automatically disabled for users who prefer reduced motion
+- **Performance optimized:** GPU-accelerated transforms with `will-change`, cubic-bezier easing
+
+**Animation Details by Section:**
+- **Section Headers:** Quick slide-up (500ms, 20% threshold, 20px distance)
+- **Section Content:** Smooth slide-up (600ms, 15% threshold, 25px distance, 100ms delay)
+- **Project Cards:** Individual reveals (600ms, 10% threshold, 30px distance)
+- **Contact Section:** Simple fade (600ms, 20% threshold)
 
 ### Accessibility
 - Skip to content link
@@ -66,18 +92,23 @@ The website uses a deep purple/violet theme for uniqueness while maintaining pro
 - Minimal JavaScript for core functionality
 
 ### Responsiveness
-- Mobile-first approach
-- Breakpoints: sm (640px), md (768px), lg (1024px)
-- Mobile hamburger menu
-- Adaptive layouts for all sections
-- Hidden sidebars on mobile/tablet
+- **Mobile-first approach** with progressive enhancement
+- **Breakpoints:** sm (640px), md (768px), lg (1024px)
+- **Responsive spacing:** Sections adapt padding (4rem mobile, 6rem tablet, 8rem desktop)
+- **Responsive typography:** Font sizes and spacing scale with viewport
+- **Mobile hamburger menu** replaces desktop navigation
+- **Adaptive layouts:** Grid systems collapse gracefully
+- **Hidden sidebars** on mobile/tablet (shown only on lg+ screens)
 
 ### Animations & Interactions
-- Fade-in-up animation for Hero section elements
-- Hover effects on links, buttons, and project cards
-- Smooth scrolling to anchor sections
-- Custom scrollbar styling
-- Glow effects on interactive elements
+- **Scroll-triggered animations:** Sections fade in as they enter viewport using Intersection Observer API
+- **Hero animations:** Staggered fade-in-up for introduction elements
+- **Hover effects:** Smooth transitions on links, buttons, and project cards
+- **Smooth scrolling:** Native smooth scroll to anchor sections
+- **Custom scrollbar:** Styled scrollbar with accent colors
+- **Glow effects:** Subtle glow on interactive elements
+- **Performance optimized:** Uses Intersection Observer for efficient scroll detection
+- **Accessibility:** Respects `prefers-reduced-motion` user preference
 
 ## Unique Design Elements
 
@@ -142,11 +173,75 @@ Update CSS variables in `src/styles/global.css` under `:root`
 - **Skip links** for easy navigation
 - **Responsive to motion preferences**
 
+## Animation Components Usage
+
+### ScrollReveal Component
+
+For scroll-triggered animations:
+
+```tsx
+import ScrollReveal from './ScrollReveal';
+
+<ScrollReveal 
+  variant="slide-up"    // 'fade' | 'slide-up' | 'slide-down' | 'slide-left' | 'slide-right' | 'scale'
+  duration={600}        // Animation duration in ms (default: 600)
+  delay={0}             // Delay before animation starts in ms (default: 0)
+  threshold={0.1}       // 0-1, when to trigger (default: 0.1 = 10% visible)
+  distance={30}         // Distance to move in pixels for slide variants (default: 30)
+  once={true}           // Trigger only once (default: true)
+  client:load           // Required for React components in Astro
+>
+  <div>Your content here</div>
+</ScrollReveal>
+```
+
+### PageLoadAnimation Component
+
+For sequential page load animations:
+
+```tsx
+import PageLoadAnimation from './PageLoadAnimation';
+
+<PageLoadAnimation 
+  delay={800}           // Delay before animation starts in ms
+  duration={400}        // Animation duration in ms (default: 400)
+  variant="slide-up"    // 'fade-in' | 'slide-down' | 'slide-up' | 'slide-left' | 'slide-right'
+  distance={20}         // Distance to move in pixels (default: 20)
+  client:load
+>
+  <div>Your content here</div>
+</PageLoadAnimation>
+```
+
+### SidebarReveal Component
+
+For sidebar animations:
+
+```tsx
+import SidebarReveal from './SidebarReveal';
+
+<SidebarReveal 
+  side="left"           // 'left' or 'right'
+  delay={1400}          // Delay before animation starts in ms
+  client:load
+>
+  <aside>Sidebar content</aside>
+</SidebarReveal>
+```
+
+**Best Practices:**
+- Use `threshold={0.15-0.2}` for large sections, `0.1` for smaller components
+- Keep `duration` between 400-600ms for smooth feel
+- Use `delay` for staggered animations (100-200ms increments)
+- Use shorter `distance` values (20-25px) for subtle animations
+- Page load animations should follow a logical sequence (header → hero → sidebars)
+
 ## Next Steps / Enhancements
 - Add actual profile image (replace placeholder)
 - Create resume PDF
 - Add real project screenshots/images
-- Implement scroll-triggered animations with Intersection Observer
+- ✅ ~~Implement scroll-triggered animations with Intersection Observer~~ (Complete)
+- Add individual project card stagger animations (optional enhancement)
 - Add blog section (optional)
 - Set up analytics
 - Add dark/light mode toggle (optional)
