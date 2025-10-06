@@ -122,7 +122,7 @@ export default function MobileMenu() {
                 </span>
               </button>
             </li>
-            <li className="w-full pt-8">
+            <li className="w-full pt-4">
               <a
                 href={socialLinks.resume}
                 target="_blank"
