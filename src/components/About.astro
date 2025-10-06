@@ -1,0 +1,93 @@
+---
+// About Section - Bio and skills
+---
+
+<section id="about" class="py-24 scroll-mt-20">
+  <div class="w-full max-w-5xl mx-auto">
+    <!-- Section Header -->
+    <h2 class="flex items-center text-3xl md:text-4xl font-bold text-[var(--color-text-primary)] mb-12">
+      <span class="text-[var(--color-accent-primary)] font-mono text-2xl mr-3">01.</span>
+      About Me
+      <span class="ml-6 h-px flex-1 bg-[var(--color-border)]"></span>
+    </h2>
+
+    <div class="grid md:grid-cols-5 gap-12 items-start">
+      <!-- Bio Content -->
+      <div class="md:col-span-3 space-y-4 text-[var(--color-text-secondary)] text-base leading-relaxed">
+        <p>
+          Hello! I'm Pawel, a software engineer passionate about creating innovative solutions that live on the web. 
+          My journey in development started years ago with a curiosity about how websites work, and it has evolved into 
+          a career building sophisticated web applications and platforms.
+        </p>
+        
+        <p>
+          I specialize in full-stack development, with expertise in modern JavaScript frameworks, cloud infrastructure, 
+          and AI integration. I thrive on solving complex problems and turning ideas into elegant, scalable solutions.
+        </p>
+        
+        <p>
+          When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
+          or sharing knowledge with the developer community. I believe in writing clean, maintainable code and 
+          building products that genuinely improve people's lives.
+        </p>
+        
+        <p class="text-[var(--color-text-primary)]">
+          Here are some technologies I've been working with recently:
+        </p>
+        
+        <!-- Skills Grid -->
+        <ul class="grid grid-cols-2 gap-2 pt-4 font-mono text-sm">
+          <li class="flex items-center gap-2">
+            <span class="text-[var(--color-accent-primary)]">▹</span>
+            TypeScript / JavaScript
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-[var(--color-accent-primary)]">▹</span>
+            React / Next.js
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-[var(--color-accent-primary)]">▹</span>
+            Node.js / Express
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-[var(--color-accent-primary)]">▹</span>
+            Python / FastAPI
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-[var(--color-accent-primary)]">▹</span>
+            PostgreSQL / Prisma
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-[var(--color-accent-primary)]">▹</span>
+            Azure / AWS
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-[var(--color-accent-primary)]">▹</span>
+            Docker / Kubernetes
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-[var(--color-accent-primary)]">▹</span>
+            OpenAI / LangChain
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Profile Image -->
+      <div class="md:col-span-2 relative group">
+        <div class="relative z-10 rounded-lg overflow-hidden border-2 border-[var(--color-accent-primary)] hover:border-[var(--color-accent-secondary)] transition-colors duration-300">
+          <div class="aspect-square bg-[var(--color-bg-tertiary)] flex items-center justify-center">
+            <!-- Placeholder - replace with actual image -->
+            <div class="w-full h-full bg-gradient-to-br from-[var(--color-accent-primary)] to-[var(--color-bg-tertiary)] opacity-30"></div>
+            <span class="absolute inset-0 flex items-center justify-center text-6xl text-[var(--color-accent-primary)] font-bold">
+              PS
+            </span>
+          </div>
+          <!-- Overlay on hover -->
+          <div class="absolute inset-0 bg-[var(--color-accent-primary)]/20 group-hover:bg-transparent transition-all duration-300"></div>
+        </div>
+        <!-- Background decoration -->
+        <div class="absolute top-5 left-5 w-full h-full border-2 border-[var(--color-accent-primary)] rounded-lg -z-10 group-hover:top-6 group-hover:left-6 transition-all duration-300"></div>
+      </div>
+    </div>
+  </div>
+</section>
