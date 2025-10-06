@@ -69,7 +69,7 @@ export default function MobileMenu() {
           }`}
           aria-label="Mobile navigation"
         >
-          <ul className="flex flex-col items-center gap-10 text-center w-full px-8">
+          <ul className="flex flex-col items-center gap-6 text-center w-full px-8">
             <li className="w-full">
               <a
                 href="#about"
