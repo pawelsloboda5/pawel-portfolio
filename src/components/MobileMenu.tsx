@@ -199,18 +199,6 @@ export default function MobileMenu() {
                 <span className="text-xl tracking-wide font-light">Contact</span>
               </a>
             </li>
-            <li className="w-full">
-              <button
-                onClick={handleOpenChatbot}
-                className="flex flex-col items-center gap-2 text-[var(--color-text-primary)] hover:text-[var(--color-accent-primary)] transition-colors py-2 group w-full"
-              >
-                <span className="text-[var(--color-accent-primary)] text-sm font-mono">05.</span>
-                <span className="text-xl tracking-wide font-light flex items-center gap-2">
-                  <img src="/robot.svg" alt="" width="24" height="24" className="opacity-90 group-hover:opacity-100 transition-opacity" />
-                  AI Chatbot
-                </span>
-              </button>
-            </li>
             <li className="w-full pt-4">
               <a
                 href={socialLinks.resume}
