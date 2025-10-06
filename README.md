@@ -110,7 +110,7 @@ pawel-portfolio/
 
 This project is licensed under the MIT License (Non-Commercial) - see the [LICENSE](LICENSE) file for details.
 
-**TL;DR**: You can freely use, modify, and distribute this code for personal and educational purposes, but not for commercial use. If you use this as a base for your own portfolio, please give appropriate credit.
+**TL;DR**: You can freely use, modify, and distribute this code for personal and educational purposes, but not for commercial use. If you use this as a base for your own portfolio, just mention my name, email or one of my links in one of your repo's README.md at some point in the doc.
 
 ## Acknowledgments
 
@@ -127,5 +127,3 @@ Feel free to reach out if you have any questions or just want to connect!
 - **GitHub**: [@pawelsloboda5](https://github.com/pawelsloboda5)
 
 ---
-
-Made with ❤️ by Pawel Sloboda
