@@ -1,166 +1,92 @@
 ---
 // Featured Projects Section - Large showcase projects
 import ScrollReveal from './ScrollReveal';
+import { featuredProjects } from '../data/featuredProjects';
 ---
 
 <ul class="list-none p-0 m-0">
-  <!-- Project 1 - Odd (Image Left, Content Right) -->
-  <ScrollReveal client:load variant="slide-up" duration={600} threshold={0.1} delay={100} distance={30}>
-    <li class="featured-project featured-project-odd">
-      <!-- Project Content -->
-      <div class="project-content">
-        <p class="project-overline">Featured Project</p>
-        <h3 class="project-title">
-          <a href="https://project1.com" target="_blank" rel="noopener noreferrer">
-            Halcyon Theme
-          </a>
-        </h3>
-        
-        <div class="project-description">
-          <p>
-            A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on 
-            <a href="https://marketplace.visualstudio.com/" target="_blank" rel="noopener noreferrer">Visual Studio Marketplace</a>, 
-            <a href="https://packagecontrol.io/" target="_blank" rel="noopener noreferrer">Package Control</a>, 
-            <a href="https://atom.io/themes" target="_blank" rel="noopener noreferrer">Atom Package Manager</a>, and 
-            <a href="https://www.npmjs.com/" target="_blank" rel="noopener noreferrer">npm</a>.
-          </p>
-        </div>
+  {featuredProjects.map((project, index) => {
+    // Alternate between odd (0, 2, 4...) and even (1, 3, 5...) layouts
+    const isOdd = index % 2 === 0;
+    const layoutClass = isOdd ? 'featured-project-odd' : 'featured-project-even';
+    
+    return (
+      <ScrollReveal client:load variant="slide-up" duration={600} threshold={0.1} delay={100} distance={30}>
+        <li class={`featured-project ${layoutClass}`}>
+          <!-- Project Content -->
+          <div class="project-content">
+            <p class="project-overline">Featured Project</p>
+            <h3 class="project-title">
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                {project.title}
+              </a>
+            </h3>
+            
+            <div class="project-description">
+              <p set:html={project.description} />
+            </div>
 
-        <ul class="project-tech-list">
-          <li>VS Code</li>
-          <li>Sublime Text</li>
-          <li>Atom</li>
-          <li>iTerm2</li>
-          <li>Hyper</li>
-        </ul>
+            <ul class="project-tech-list">
+              {project.techStack.map(tech => (
+                <li>{tech}</li>
+              ))}
+            </ul>
 
-        <div class="project-links">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-          </a>
-          <a href="https://project1.com" target="_blank" rel="noopener noreferrer" aria-label="External link" class="external">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Project Image -->
-      <div class="project-image">
-        <a href="https://project1.com" target="_blank" rel="noopener noreferrer">
-          <div class="img-wrapper">
-            <div class="img aspect-video bg-gradient-to-br from-[var(--color-accent-primary)] to-[var(--color-bg-tertiary)]"></div>
+            <div class="project-links">
+              {project.githubUrl && (
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+              )}
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label="External link" class="external">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
           </div>
-        </a>
-      </div>
-    </li>
-  </ScrollReveal>
 
-  <!-- Project 2 - Even (Content Left, Image Right) -->
-  <ScrollReveal client:load variant="slide-up" duration={600} threshold={0.1} delay={100} distance={30}>
-    <li class="featured-project featured-project-even">
-      <!-- Project Content -->
-      <div class="project-content">
-        <p class="project-overline">Featured Project</p>
-        <h3 class="project-title">
-          <a href="https://project2.com" target="_blank" rel="noopener noreferrer">
-            Spotify Profile
-          </a>
-        </h3>
-        
-        <div class="project-description">
-          <p>
-            A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, 
-            and detailed audio information about each track. Create and save new playlists of recommended tracks based on 
-            your existing playlists and more.
-          </p>
-        </div>
-
-        <ul class="project-tech-list">
-          <li>React</li>
-          <li>Styled Components</li>
-          <li>Express</li>
-          <li>Spotify API</li>
-          <li>Heroku</li>
-        </ul>
-
-        <div class="project-links">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-          </a>
-          <a href="https://project2.com" target="_blank" rel="noopener noreferrer" aria-label="External link" class="external">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Project Image -->
-      <div class="project-image">
-        <a href="https://project2.com" target="_blank" rel="noopener noreferrer">
-          <div class="img-wrapper">
-            <div class="img aspect-video bg-gradient-to-br from-green-500 to-[var(--color-bg-tertiary)]"></div>
+          <!-- Project Image -->
+          <div class="project-image">
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+              <div class="img-wrapper">
+                {project.imageUrl ? (
+                  <img 
+                    src={project.imageUrl} 
+                    alt={project.title} 
+                    class="img aspect-video"
+                    loading="eager"
+                    decoding="async"
+                  />
+                ) : project.imageGradient ? (
+                  <div class={`img aspect-video bg-gradient-to-br`} style={`background: linear-gradient(to bottom right, ${project.imageGradient.from}, ${project.imageGradient.to});`}></div>
+                ) : (
+                  <div class="img aspect-video bg-gradient-to-br from-[var(--color-accent-primary)] to-[var(--color-bg-tertiary)]"></div>
+                )}
+              </div>
+            </a>
           </div>
-        </a>
-      </div>
-    </li>
-  </ScrollReveal>
-
-  <!-- Project 3 - Odd (Image Left, Content Right) -->
-  <ScrollReveal client:load variant="slide-up" duration={600} threshold={0.1} delay={100} distance={30}>
-    <li class="featured-project featured-project-odd">
-      <!-- Project Content -->
-      <div class="project-content">
-        <p class="project-overline">Featured Project</p>
-        <h3 class="project-title">
-          <a href="https://project3.com" target="_blank" rel="noopener noreferrer">
-            Build a Spotify Connected App
-          </a>
-        </h3>
-        
-        <div class="project-description">
-          <p>
-            Having struggled with understanding how the Spotify OAuth flow works, I made the course I wish I could have had. 
-            Walk through building a Spotify connected app step-by-step with the Spotify Web API, Express, React, Styled Components, and more.
-          </p>
-        </div>
-
-        <ul class="project-tech-list">
-          <li>React</li>
-          <li>Express</li>
-          <li>Spotify API</li>
-          <li>Styled Components</li>
-        </ul>
-
-        <div class="project-links">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-          </a>
-          <a href="https://project3.com" target="_blank" rel="noopener noreferrer" aria-label="External link" class="external">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Project Image -->
-      <div class="project-image">
-        <a href="https://project3.com" target="_blank" rel="noopener noreferrer">
-          <div class="img-wrapper">
-            <div class="img aspect-video bg-gradient-to-br from-blue-500 to-[var(--color-bg-tertiary)]"></div>
-          </div>
-        </a>
-      </div>
-    </li>
-  </ScrollReveal>
+        </li>
+      </ScrollReveal>
+    );
+  })}
 </ul>
 
 <style>
+  /* Reset list styles */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
   /* Featured Projects Styles */
   .featured-project {
     position: relative;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 10px;
+    gap: 20px;
     align-items: center;
-    margin-bottom: 100px;
+    margin-bottom: 120px;
+    padding: 0;
   }
 
   .featured-project:last-of-type {
@@ -180,6 +106,9 @@ import ScrollReveal from './ScrollReveal';
 
   .featured-project-odd .project-tech-list {
     justify-content: flex-end;
+    text-align: right;
+    margin-left: auto;
+    margin-right: 0;
   }
 
   .featured-project-odd .project-tech-list li {
@@ -260,7 +189,7 @@ import ScrollReveal from './ScrollReveal';
     border-radius: 4px;
     background-color: var(--color-bg-secondary);
     color: var(--color-text-secondary);
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
     transition: box-shadow 0.3s ease;
   }
@@ -308,6 +237,27 @@ import ScrollReveal from './ScrollReveal';
     margin: 25px 0 10px;
     padding: 0;
     list-style: none;
+    max-width: 95%;
+  }
+
+  /* Constrain tech list width on tablet devices to prevent image overlap */
+  @media (min-width: 769px) and (max-width: 1080px) {
+    .featured-project-odd .project-tech-list {
+      max-width: 65%;
+    }
+    
+    .featured-project-even .project-tech-list {
+      max-width: 65%;
+    }
+  }
+  @media (min-width: 1081px) and (max-width: 1480px) {
+    .featured-project-odd .project-tech-list {
+      max-width: 75%;
+    }
+    
+    .featured-project-even .project-tech-list {
+      max-width: 75%;
+    }
   }
 
   .project-tech-list li {
@@ -355,6 +305,11 @@ import ScrollReveal from './ScrollReveal';
     box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
     position: relative;
     z-index: 1;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .project-image:hover {
+    box-shadow: 0 20px 40px -15px rgba(2, 12, 27, 0.85);
   }
 
   .project-image a {
@@ -377,91 +332,99 @@ import ScrollReveal from './ScrollReveal';
     right: 0;
     bottom: 0;
     z-index: 3;
-    transition: all 0.3s ease;
-    background-color: var(--color-bg-primary);
-    mix-blend-mode: screen;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgba(100, 60, 180, 0.55);
+    mix-blend-mode: normal;
   }
 
   .project-image:hover a::before {
-    background: transparent;
+    background-color: rgba(100, 60, 180, 0.15);
   }
 
   .img-wrapper {
     border-radius: 4px;
     overflow: hidden;
+    min-height: 320px;
   }
 
   .img {
     border-radius: 4px;
     width: 100%;
     height: 100%;
+    min-height: 380px;
     object-fit: cover;
-    mix-blend-mode: multiply;
-    filter: grayscale(100%) contrast(1) brightness(90%);
-    transition: all 0.3s ease;
+    mix-blend-mode: normal;
+    filter: contrast(1.05) brightness(1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1);
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
   }
 
   .project-image:hover .img {
-    filter: none;
+    filter: contrast(1.08) brightness(1.08) saturate(1.1);
+    transform: scale(1.05);
     mix-blend-mode: normal;
   }
 
   /* Mobile Styles */
   @media (max-width: 768px) {
     .featured-project {
-      box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
-      margin-bottom: 70px;
+      box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7) !important;
+      margin-bottom: 60px !important;
+      padding: 0 !important;
+      border-radius: 8px;
+      overflow: hidden;
+      min-height: auto;
+      position: relative;
+      display: block;
     }
 
     .featured-project:last-of-type {
-      margin-bottom: 0;
+      margin-bottom: 0 !important;
     }
 
     .featured-project-odd .project-content,
     .featured-project-even .project-content {
-      grid-column: 1 / -1;
-      padding: 40px 40px 30px;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 100%;
+      position: relative !important;
+      padding: 40px 30px !important;
+      text-align: left !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-start !important;
+      align-items: flex-start !important;
+      height: auto;
       z-index: 5;
+      min-height: auto;
+      width: 100%;
     }
 
     .featured-project-odd .project-image,
     .featured-project-even .project-image {
-      grid-column: 1 / -1;
-      grid-row: 1 / -1;
-      height: 100%;
-      opacity: 0.25;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      z-index: 1 !important;
+      opacity: 0.15 !important;
     }
 
-    .featured-project-odd .project-tech-list,
-    .featured-project-even .project-tech-list {
-      justify-content: flex-start;
-      margin: 10px 0;
-    }
-
-    .featured-project-odd .project-tech-list li,
-    .featured-project-even .project-tech-list li {
-      margin: 0 10px 5px 0;
-      color: var(--color-text-primary);
-    }
-
-    .featured-project-odd .project-links,
-    .featured-project-even .project-links {
-      justify-content: flex-start;
-      margin-left: -10px;
-      margin-right: 0;
+    .project-overline {
+      text-align: left !important;
+      margin: 10px 0 !important;
+      width: 100%;
     }
 
     .project-title {
-      margin: 0 0 20px;
+      margin: 0 0 20px !important;
+      text-align: left !important;
+      width: 100%;
     }
 
     .project-title a {
       position: static;
+      text-align: left !important;
     }
 
     .project-title a::before {
@@ -476,31 +439,112 @@ import ScrollReveal from './ScrollReveal';
     }
 
     .project-description {
-      padding: 20px 0;
-      background-color: transparent;
-      box-shadow: none;
+      padding: 15px 0 !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      text-align: left !important;
+      max-width: 100%;
+      width: 100%;
     }
 
     .project-description:hover {
-      box-shadow: none;
+      box-shadow: none !important;
+    }
+
+    .project-description p {
+      text-align: left !important;
+      margin: 0 !important;
+    }
+
+    .project-description a {
+      display: inline !important;
+    }
+
+    .featured-project-odd .project-tech-list,
+    .featured-project-even .project-tech-list {
+      justify-content: flex-start !important;
+      margin: 20px 0 10px !important;
+      text-align: left !important;
+      width: 100%;
+    }
+
+    .featured-project-odd .project-tech-list li,
+    .featured-project-even .project-tech-list li {
+      margin: 0 10px 8px 0 !important;
+      color: var(--color-text-primary) !important;
+    }
+
+    .featured-project-odd .project-links,
+    .featured-project-even .project-links {
+      justify-content: flex-start !important;
+      margin: 10px 0 0 !important;
+      margin-left: -10px !important;
+      width: 100%;
+    }
+
+    .project-image a {
+      width: 100% !important;
+      height: 100% !important;
+      display: block !important;
+    }
+
+    .project-image a::before {
+      display: none !important;
+    }
+
+    .img-wrapper {
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 100% !important;
     }
 
     .img {
       object-fit: cover;
-      width: auto;
+      width: 100%;
       height: 100%;
-      filter: grayscale(100%) contrast(1) brightness(50%);
+      min-height: 100%;
+      filter: contrast(1.05) brightness(0.7);
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
     }
   }
 
   @media (max-width: 480px) {
     .featured-project {
-      margin-bottom: 30px;
+      margin-bottom: 40px !important;
+      min-height: auto;
+      position: relative;
     }
 
     .featured-project-odd .project-content,
     .featured-project-even .project-content {
-      padding: 30px 25px 20px;
+      padding: 35px 25px !important;
+      min-height: auto;
+      position: relative !important;
+      z-index: 5 !important;
+    }
+
+    .featured-project-odd .project-image,
+    .featured-project-even .project-image {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      z-index: 1 !important;
+    }
+
+    .project-description {
+      font-size: 15px !important;
+      line-height: 1.6 !important;
+    }
+
+    .project-title {
+      font-size: 22px !important;
+    }
+
+    .project-tech-list li {
+      font-size: 12px !important;
     }
   }
 

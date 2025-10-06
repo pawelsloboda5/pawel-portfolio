@@ -47,6 +47,13 @@ export default function SidebarReveal({
           transform: ${isVisible ? 'translateX(0)' : `translateX(${translateX})`};
           transition: opacity 600ms cubic-bezier(0.4, 0, 0.2, 1), transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
         }
+
+        /* Hide sidebar on mobile devices */
+        @media (max-width: 768px) {
+          aside[aria-label="${side === 'left' ? 'Social media links' : 'Email contact'}"] {
+            display: none;
+          }
+        }
       `}</style>
     </>
   );

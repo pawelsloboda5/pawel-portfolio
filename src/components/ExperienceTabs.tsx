@@ -1,55 +1,41 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { experiences } from '../data/experiences';
+import type { Experience } from '../types/experience';
 
-interface Job {
-  company: string;
-  title: string;
-  duration: string;
-  description: string[];
-  url?: string;
-}
-
-const jobs: Job[] = [
-  {
-    company: 'Current Company',
-    title: 'Senior Full-Stack Engineer',
-    duration: 'January 2022 - Present',
-    url: 'https://company.com',
-    description: [
-      'Lead development of cloud-native applications serving 100k+ users, utilizing React, Next.js, and Azure infrastructure',
-      'Architected and implemented AI-powered features using OpenAI GPT-4 and LangChain, improving user engagement by 40%',
-      'Mentored junior developers and established best practices for code quality, testing, and deployment pipelines',
-      'Collaborated with product and design teams to deliver scalable solutions on time and within budget',
-    ],
-  },
-  {
-    company: 'Previous Startup',
-    title: 'Full-Stack Developer',
-    duration: 'June 2020 - December 2021',
-    url: 'https://startup.com',
-    description: [
-      'Built RESTful APIs and microservices using Node.js, Express, and PostgreSQL with Prisma ORM',
-      'Developed responsive web applications with React, TypeScript, and Tailwind CSS',
-      'Implemented CI/CD pipelines with GitHub Actions, Docker, and Kubernetes for automated deployments',
-      'Optimized database queries and application performance, reducing load times by 50%',
-    ],
-  },
-  {
-    company: 'Tech Consultancy',
-    title: 'Software Engineer',
-    duration: 'January 2019 - May 2020',
-    url: 'https://consultancy.com',
-    description: [
-      'Delivered custom web solutions for diverse clients across healthcare, finance, and e-commerce sectors',
-      'Integrated third-party APIs and payment gateways including Stripe, PayPal, and Square',
-      'Conducted code reviews and implemented automated testing strategies with Jest and Cypress',
-      'Collaborated in agile teams using Scrum methodologies for iterative development',
-    ],
-  },
-];
+const jobs: Experience[] = experiences;
 
 export default function ExperienceTabs() {
   const [activeTab, setActiveTab] = useState(0);
+  const [containerHeight, setContainerHeight] = useState<number | null>(null);
+  const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
   const activeJob = jobs[activeTab];
+
+  // Measure and set the maximum height across all tab panels
+  useEffect(() => {
+    const measureHeights = () => {
+      // Temporarily make all content visible to measure their heights
+      const heights = contentRefs.current.map((ref) => {
+        if (!ref) return 0;
+        return ref.offsetHeight;
+      });
+
+      // Find the maximum height
+      const maxHeight = Math.max(...heights, 300); // Minimum 300px
+      setContainerHeight(maxHeight);
+    };
+
+    // Measure after initial render
+    measureHeights();
+
+    // Recalculate on window resize
+    const handleResize = () => {
+      measureHeights();
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div className="flex flex-col md:flex-row gap-8">
@@ -82,42 +68,66 @@ export default function ExperienceTabs() {
         ))}
       </div>
 
-      {/* Tab Panel */}
+      {/* Tab Panel Container with Fixed Height */}
       <div
-        role="tabpanel"
-        id={`tabpanel-${activeTab}`}
-        aria-labelledby={`tab-${activeTab}`}
-        className="flex-1 min-h-[300px]"
+        ref={containerRef}
+        className="flex-1 relative"
+        style={{
+          height: containerHeight ? `${containerHeight}px` : 'auto',
+          minHeight: '300px',
+          transition: 'height 0.3s ease-in-out',
+        }}
       >
-        <h3 className="text-xl md:text-2xl font-bold text-[var(--color-text-primary)] mb-1">
-          {activeJob.title}
-          {activeJob.url && (
-            <a
-              href={activeJob.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--color-accent-primary)] hover:underline ml-2"
-            >
-              @ {activeJob.company}
-            </a>
-          )}
-          {!activeJob.url && (
-            <span className="text-[var(--color-accent-primary)]"> @ {activeJob.company}</span>
-          )}
-        </h3>
+        {jobs.map((job, index) => (
+          <div
+            key={job.company}
+            ref={(el) => {
+              contentRefs.current[index] = el;
+            }}
+            role="tabpanel"
+            id={`tabpanel-${index}`}
+            aria-labelledby={`tab-${index}`}
+            aria-hidden={activeTab !== index}
+            className={`
+              absolute inset-0 transition-opacity duration-300
+              ${activeTab === index ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
+            `}
+            style={{
+              // Keep all panels in DOM for measurement but hide inactive ones
+              visibility: containerHeight === null || activeTab === index ? 'visible' : 'hidden',
+            }}
+          >
+            <h3 className="text-xl md:text-2xl font-bold text-[var(--color-text-primary)] mb-1">
+              {job.title}
+              {job.url && (
+                <a
+                  href={job.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--color-accent-primary)] hover:underline ml-2"
+                >
+                  @ {job.company}
+                </a>
+              )}
+              {!job.url && (
+                <span className="text-[var(--color-accent-primary)]"> @ {job.company}</span>
+              )}
+            </h3>
 
-        <p className="font-mono text-sm text-[var(--color-text-muted)] mb-6">
-          {activeJob.duration}
-        </p>
+            <p className="font-mono text-sm text-[var(--color-text-muted)] mb-6">
+              {job.duration}
+            </p>
 
-        <ul className="space-y-4">
-          {activeJob.description.map((item, idx) => (
-            <li key={idx} className="flex gap-3 text-[var(--color-text-secondary)]">
-              <span className="text-[var(--color-accent-primary)] mt-1 flex-shrink-0">▹</span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
+            <ul className="space-y-4">
+              {job.description.map((item, idx) => (
+                <li key={idx} className="flex gap-3 text-[var(--color-text-secondary)]">
+                  <span className="text-[var(--color-accent-primary)] mt-1 flex-shrink-0">▹</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );

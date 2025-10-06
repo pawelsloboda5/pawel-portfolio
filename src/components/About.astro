@@ -1,25 +1,22 @@
 ---
 // About Section - Bio and skills
 import ScrollReveal from './ScrollReveal';
+import { companyLinks } from '../data/links';
 ---
 
 <section id="about" class="scroll-mt-20">
   <div class="w-full max-w-5xl mx-auto">
     <!-- Section Header -->
     <ScrollReveal client:load variant="slide-up" duration={500} threshold={0.2} distance={20}>
-      <div class="mb-8 md:mb-12">
-        <div class="inline-flex items-center gap-3 mb-4">
-          <div class="w-2 h-2 rounded-full bg-[var(--color-accent-primary)] animate-pulse"></div>
-          <span class="text-xs font-mono text-[var(--color-accent-primary)] uppercase tracking-wider">About</span>
-        </div>
-        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--color-text-primary)]">
+      <div class="mb-8 md:mb-12 flex items-center gap-6">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--color-text-primary)] whitespace-nowrap">
           About Me
         </h2>
         <!-- Unique decorative element -->
-        <div class="mt-6 flex items-center gap-4">
-          <div class="h-1 w-12 bg-gradient-to-r from-[var(--color-accent-primary)] to-transparent rounded-full"></div>
-          <div class="h-1 w-8 bg-gradient-to-r from-[var(--color-accent-primary)] to-transparent rounded-full opacity-60"></div>
-          <div class="h-1 w-4 bg-gradient-to-r from-[var(--color-accent-primary)] to-transparent rounded-full opacity-30"></div>
+        <div class="flex items-center gap-4 flex-1 min-w-0">
+          <div class="h-1 w-full max-w-[200px] md:max-w-[300px] bg-gradient-to-r from-[var(--color-accent-primary)] to-transparent rounded-full"></div>
+          <div class="h-1 w-16 md:w-24 bg-gradient-to-r from-[var(--color-accent-primary)] to-transparent rounded-full opacity-60"></div>
+          <div class="h-1 w-8 md:w-12 bg-gradient-to-r from-[var(--color-accent-primary)] to-transparent rounded-full opacity-30"></div>
         </div>
       </div>
     </ScrollReveal>
@@ -29,20 +26,15 @@ import ScrollReveal from './ScrollReveal';
         <!-- Bio Content -->
         <div class="md:col-span-3 space-y-3 md:space-y-4 text-[var(--color-text-secondary)] text-sm md:text-base leading-relaxed">
         <p>
-          Hello! I'm Pawel, a software engineer passionate about creating innovative solutions that live on the web. 
-          My journey in development started years ago with a curiosity about how websites work, and it has evolved into 
-          a career building sophisticated web applications and platforms.
+          Hello! I'm Pawel, a software engineer who's been building things for the web since I was 12. Back then, I was creating Adobe Flash games and text-based RPG games, publishing them on <a href="https://www.kongregate.com/accounts/WarriorsBattle" target="_blank" rel="noopener noreferrer" class="keyword-link">Kongregate</a> where they collectively reached over 50,000 gameplays. That early experience of building something people actually used sparked a passion that's shaped my entire career.
         </p>
         
         <p>
-          I specialize in full-stack development, with expertise in modern JavaScript frameworks, cloud infrastructure, 
-          and AI integration. I thrive on solving complex problems and turning ideas into elegant, scalable solutions.
+          Fast forward to today, and I've built AI-powered health platforms at <a href={companyLinks.sie2} target="_blank" rel="noopener noreferrer" class="keyword-link">a social impact startup</a>, developed machine learning pipelines at <a href={companyLinks.adobe} target="_blank" rel="noopener noreferrer" class="keyword-link">Adobe</a>, and engineered cybersecurity infrastructure for <a href={companyLinks.ndu} target="_blank" rel="noopener noreferrer" class="keyword-link">the Department of Defense</a>. My work focuses on creating systems that are both technically sophisticated and genuinely useful.
         </p>
         
         <p>
-          When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
-          or sharing knowledge with the developer community. I believe in writing clean, maintainable code and 
-          building products that genuinely improve people's lives.
+          Most recently, I've been extracting and parsing terabytes of insurer data to estimate healthcare costs, transforming unstructured medical billing data into structured formats that power an <a href={companyLinks.sie2} target="_blank" rel="noopener noreferrer" class="keyword-link">AI copilot</a>. I specialize in full-stack development with a strong focus on AI integration, vector search, and data engineering, tackling complex problems like semantic search across 50,000+ services and real-time ML inference.
         </p>
         
         <p class="text-[var(--color-text-primary)]">
@@ -57,11 +49,7 @@ import ScrollReveal from './ScrollReveal';
           </li>
           <li class="flex items-center gap-2">
             <span class="text-[var(--color-accent-primary)]">▹</span>
-            React / Next.js
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-[var(--color-accent-primary)]">▹</span>
-            Node.js / Express
+            React / Next.js 15
           </li>
           <li class="flex items-center gap-2">
             <span class="text-[var(--color-accent-primary)]">▹</span>
@@ -69,35 +57,41 @@ import ScrollReveal from './ScrollReveal';
           </li>
           <li class="flex items-center gap-2">
             <span class="text-[var(--color-accent-primary)]">▹</span>
+            Azure OpenAI / GPT-4
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-[var(--color-accent-primary)]">▹</span>
             PostgreSQL / Prisma
           </li>
           <li class="flex items-center gap-2">
             <span class="text-[var(--color-accent-primary)]">▹</span>
-            Azure / AWS
+            Vector DBs / RAG
           </li>
           <li class="flex items-center gap-2">
             <span class="text-[var(--color-accent-primary)]">▹</span>
-            Docker / Kubernetes
+            Azure Cosmos DB
           </li>
           <li class="flex items-center gap-2">
             <span class="text-[var(--color-accent-primary)]">▹</span>
-            OpenAI / LangChain
+            Docker / CI/CD
           </li>
         </ul>
       </div>
       
       <!-- Profile Image -->
-      <div class="md:col-span-2 relative group">
+      <div class="md:col-span-2 relative group max-w-[280px] md:max-w-none mx-auto md:mx-0">
         <div class="relative z-10 rounded-lg overflow-hidden border-2 border-[var(--color-accent-primary)] hover:border-[var(--color-accent-secondary)] transition-colors duration-300">
-          <div class="aspect-square bg-[var(--color-bg-tertiary)] flex items-center justify-center">
-            <!-- Placeholder - replace with actual image -->
-            <div class="w-full h-full bg-gradient-to-br from-[var(--color-accent-primary)] to-[var(--color-bg-tertiary)] opacity-30"></div>
-            <span class="absolute inset-0 flex items-center justify-center text-6xl text-[var(--color-accent-primary)] font-bold">
-              PS
-            </span>
+          <div class="aspect-square bg-[#8b5cf6]">
+            <img 
+              src="/my-picture.png" 
+              alt="Pawel Sloboda" 
+              class="profile-image w-full h-full object-cover"
+              loading="eager"
+              decoding="async"
+            />
           </div>
-          <!-- Overlay on hover -->
-          <div class="absolute inset-0 bg-[var(--color-accent-primary)]/20 group-hover:bg-transparent transition-all duration-300"></div>
+          <!-- Purple overlay -->
+          <div class="absolute inset-0 bg-[#8b5cf6] mix-blend-screen opacity-60 group-hover:opacity-0 transition-all duration-300"></div>
         </div>
         <!-- Background decoration -->
         <div class="absolute top-5 left-5 w-full h-full border-2 border-[var(--color-accent-primary)] rounded-lg -z-10 group-hover:top-6 group-hover:left-6 transition-all duration-300"></div>
@@ -106,3 +100,47 @@ import ScrollReveal from './ScrollReveal';
     </ScrollReveal>
   </div>
 </section>
+
+<style>
+  .profile-image {
+    filter: grayscale(100%) contrast(1.2) brightness(1.1);
+    mix-blend-mode: multiply;
+    transition: all 0.3s ease;
+  }
+
+  .group:hover .profile-image {
+    filter: none;
+    mix-blend-mode: normal;
+  }
+
+  .keyword-link {
+    color: var(--color-accent-primary);
+    text-decoration: none;
+    position: relative;
+    text-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .keyword-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-secondary));
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .keyword-link:hover {
+    color: var(--color-accent-secondary);
+    text-shadow: 0 0 12px rgba(139, 92, 246, 0.7);
+  }
+
+  .keyword-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+</style>
