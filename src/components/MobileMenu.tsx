@@ -143,7 +143,7 @@ export default function MobileMenu() {
 
         {/* Menu Content */}
         <nav
-          className={`absolute right-0 top-0 bottom-0 h-screen w-[75vw] bg-[var(--color-bg-primary)] flex flex-col transition-transform duration-300 ${
+          className={`absolute right-0 top-0 h-full w-[75vw] bg-[var(--color-bg-primary)] flex flex-col transition-transform duration-300 ${
             isOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
           aria-label="Mobile navigation"
@@ -158,7 +158,7 @@ export default function MobileMenu() {
               onReset={handleReset}
             />
           ) : (
-            <ul className="flex flex-col items-center gap-6 text-center w-full px-8 pt-12 h-full">
+            <ul className="flex flex-col items-center gap-6 text-center w-full px-8 pt-8 h-full">
             <li className="w-full">
               <a
                 href="#about"
