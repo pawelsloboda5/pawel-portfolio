@@ -61,16 +61,22 @@ export default function MessageBubble({
 
     return parts.map((part, index) => {
       if (part.match(urlRegex)) {
+        // Remove common trailing punctuation so links stay valid
+        const cleaned = part.replace(/[).,;:!?]+$/g, '');
+        const trailing = part.slice(cleaned.length);
         return (
-          <a
-            key={index}
-            href={part}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[var(--color-accent-primary)] hover:text-[var(--color-accent-secondary)] underline transition-colors"
-          >
-            {part}
-          </a>
+          <>
+            <a
+              key={`a-${index}`}
+              href={cleaned}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--color-accent-primary)] hover:text-[var(--color-accent-secondary)] underline transition-colors"
+            >
+              {cleaned}
+            </a>
+            {trailing && <span key={`t-${index}`}>{trailing}</span>}
+          </>
         );
       }
       return <span key={index}>{part}</span>;

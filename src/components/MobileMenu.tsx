@@ -73,6 +73,7 @@ export default function MobileMenu() {
 
   // Send message handler
   const handleSendMessage = useCallback(async (content: string) => {
+    const historyToSend = loadChatHistory();
     // Create user message
     const userMessage = createMessage('user', content);
     setMessages(prev => [...prev, userMessage]);
@@ -81,8 +82,27 @@ export default function MobileMenu() {
     // Simulate typing delay
     await new Promise(resolve => setTimeout(resolve, chatbotConfig.typingDelay));
 
-    // Generate response
-    const responseText = generateResponse(content);
+    // Try server LLM first
+    let responseText = '';
+    try {
+      const res = await fetch('/api/chatbot', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ message: content, history: historyToSend })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (typeof data?.text === 'string' && data.text.trim()) {
+          responseText = data.text.trim();
+        }
+      }
+    } catch {
+      // ignore and fallback
+    }
+
+    if (!responseText) {
+      responseText = generateResponse(content);
+    }
 
     // Simulate response delay
     await new Promise(resolve => setTimeout(resolve, chatbotConfig.responseDelay));

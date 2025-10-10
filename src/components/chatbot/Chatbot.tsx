@@ -31,6 +31,7 @@ export default function Chatbot({ variant = 'desktop' }: ChatbotProps) {
     isMinimized: false,
     isTyping: false
   });
+  
 
   // Load chat history on mount
   useEffect(() => {
@@ -108,6 +109,9 @@ export default function Chatbot({ variant = 'desktop' }: ChatbotProps) {
    * Send user message and generate bot response
    */
   const handleSendMessage = useCallback(async (content: string) => {
+    // Capture history before adding the new user message
+    const historyToSend = loadChatHistory();
+
     // Create user message
     const userMessage = createMessage('user', content);
     
@@ -120,8 +124,29 @@ export default function Chatbot({ variant = 'desktop' }: ChatbotProps) {
     // Simulate typing delay
     await new Promise(resolve => setTimeout(resolve, chatbotConfig.typingDelay));
 
-    // Generate response
-    const responseText = generateResponse(content);
+    // Try server LLM first
+    let responseText = '';
+    try {
+      const res = await fetch('/api/chatbot', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ message: content, history: historyToSend })
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        if (typeof data?.text === 'string' && data.text.trim()) {
+          responseText = data.text.trim();
+        }
+      }
+    } catch {
+      // ignore and fallback
+    }
+
+    // Fallback to local keyword engine if API failed
+    if (!responseText) {
+      responseText = generateResponse(content);
+    }
 
     // Simulate response delay
     await new Promise(resolve => setTimeout(resolve, chatbotConfig.responseDelay));

@@ -222,6 +222,28 @@ const keywords = generateKeywords();
       <slot />
     </main>
 
+    {Astro.url.pathname === '/' && (
+      <section aria-label="Resume QR" class="mx-auto max-w-6xl px-6 sm:px-16 md:px-24 lg:px-24 xl:px-12 mt-16 md:mt-20">
+        <div class="flex flex-col items-center gap-3 sm:gap-4">
+          <a
+            href={socialLinks.resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center justify-center p-3 sm:p-4 rounded-xl border border-[var(--color-accent-primary)]/40 hover:border-[var(--color-accent-primary)] transition-colors"
+          >
+            <img
+              src="/pawel-portfolio-site-qr.png"
+              alt="Scan to open Pawel Sloboda resume"
+              loading="lazy"
+              decoding="async"
+              class="w-40 sm:w-44 md:w-52 lg:w-56 h-auto"
+            />
+          </a>
+          <p class="text-xs sm:text-sm text-[var(--color-text-muted)] font-mono">Scan or Click to view my resume</p>
+        </div>
+      </section>
+    )}
+
     <!-- Footer -->
     <footer class="mt-32">
       <div class="mx-auto max-w-6xl px-6 py-8 text-center">
