@@ -180,7 +180,7 @@ const keywords = generateKeywords();
     <SidebarReveal client:load side="right" delay={1400}>
       <aside class="hidden md:flex fixed right-8 bottom-0 flex-col items-center gap-6 z-30" aria-label="Email contact">
       <!-- Chatbot Icon with Pulse and Badge -->
-      <div id="chatbot-sidebar-wrapper">
+      <div id="chatbot-sidebar-wrapper" class="relative">
         <ChatbotPulse client:load>
           <button 
             id="chatbot-trigger"
@@ -190,8 +190,18 @@ const keywords = generateKeywords();
             <img src="/robot.svg" alt="AI Chatbot" width="28" height="28" class="opacity-90 group-hover:opacity-100 transition-opacity" />
             <!-- Message count badge (populated by script) -->
             <span id="chatbot-badge" class="hidden absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full items-center justify-center text-[10px] font-bold text-white"></span>
+            <!-- First-load exclamation badge -->
+            <span id="chatbot-exclaim" class="hidden absolute -top-2 -left-2 w-5 h-5 rounded-full bg-[var(--color-accent-primary)] text-black font-bold text-xs items-center justify-center shadow-md">
+              !
+            </span>
           </button>
         </ChatbotPulse>
+        <!-- Speech bubble (non-intrusive) -->
+        <div id="chatbot-speech-bubble" class="hidden chatbot-speech-bubble absolute -top-2 -left-56 w-52 select-none">
+          <div class="text-sm leading-snug text-[var(--color-text-primary)]">
+            Hey! Ask me about Pawel's projects, experience, or how to get in touch.
+          </div>
+        </div>
       </div>
       
       <!-- Spacer for visual separation -->
@@ -290,6 +300,8 @@ const keywords = generateKeywords();
         const trigger = document.getElementById('chatbot-trigger');
         const badge = document.getElementById('chatbot-badge');
         const sidebarWrapper = document.getElementById('chatbot-sidebar-wrapper');
+        const exclaim = document.getElementById('chatbot-exclaim');
+        const bubble = document.getElementById('chatbot-speech-bubble');
         
         if (trigger) {
           trigger.addEventListener('click', () => {
@@ -302,6 +314,9 @@ const keywords = generateKeywords();
             if (sidebarWrapper) {
               sidebarWrapper.classList.remove('chatbot-has-unread');
             }
+            // Hide exclaim and bubble on click
+            if (exclaim) exclaim.classList.add('hidden');
+            if (bubble) bubble.classList.add('hidden');
             window.dispatchEvent(new CustomEvent('openChatbot'));
           });
         }
@@ -362,6 +377,41 @@ const keywords = generateKeywords();
         // Listen for custom event to update badge after messages
         window.addEventListener('chatbotMessagesUpdated', updateBadge);
 
+        // First-visit attention sequence: waddle + exclaim + speech bubble
+        try {
+          const seenKey = 'chatbot-first-visit-seen';
+          const hasHistory = !!localStorage.getItem('chatbot-history');
+          const hasSeen = localStorage.getItem(seenKey) === 'true';
+          if (!hasSeen && !hasHistory && trigger && sidebarWrapper) {
+            // Waddle the robot icon
+            trigger.classList.add('chatbot-waddle-once');
+            // Show exclaim badge with pop
+            if (exclaim) {
+              exclaim.classList.remove('hidden');
+              exclaim.classList.add('flex', 'chatbot-exclaim-pop');
+            }
+            // After 1s, show speech bubble for a short time
+            setTimeout(() => {
+              if (bubble) {
+                bubble.classList.remove('hidden');
+                bubble.classList.add('chatbot-bubble-in');
+              }
+            }, 900);
+            // Hide bubble after 6s
+            setTimeout(() => {
+              if (bubble) {
+                bubble.classList.add('hidden');
+              }
+            }, 6900);
+            // Mark seen after sequence
+            setTimeout(() => {
+              try { localStorage.setItem(seenKey, 'true'); } catch {}
+            }, 2000);
+          }
+        } catch (e) {
+          // ignore
+        }
+
         // Hide sidebar robot when chatbot is fully open (not minimized)
         window.addEventListener('chatbotStateChange', function(event) {
           if (sidebarWrapper && event.detail) {
@@ -376,6 +426,8 @@ const keywords = generateKeywords();
                 badge.classList.remove('flex');
               }
               sidebarWrapper.classList.remove('chatbot-has-unread');
+              if (exclaim) exclaim.classList.add('hidden');
+              if (bubble) bubble.classList.add('hidden');
             } else {
               sidebarWrapper.style.display = 'block';
               // Re-check if should show badge/pulse
