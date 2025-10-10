@@ -302,6 +302,7 @@ const keywords = generateKeywords();
         const sidebarWrapper = document.getElementById('chatbot-sidebar-wrapper');
         const exclaim = document.getElementById('chatbot-exclaim');
         const bubble = document.getElementById('chatbot-speech-bubble');
+        const iconImg = trigger ? trigger.querySelector('img') : null;
         
         if (trigger) {
           trigger.addEventListener('click', () => {
@@ -317,6 +318,7 @@ const keywords = generateKeywords();
             // Hide exclaim and bubble on click
             if (exclaim) exclaim.classList.add('hidden');
             if (bubble) bubble.classList.add('hidden');
+            if (iconImg) iconImg.classList.remove('chatbot-talking');
             window.dispatchEvent(new CustomEvent('openChatbot'));
           });
         }
@@ -390,19 +392,25 @@ const keywords = generateKeywords();
               exclaim.classList.remove('hidden');
               exclaim.classList.add('flex', 'chatbot-exclaim-pop');
             }
-            // After 1s, show speech bubble for a short time
+            // After 2s more delay, show speech bubble for a short time
             setTimeout(() => {
               if (bubble) {
                 bubble.classList.remove('hidden');
-                bubble.classList.add('chatbot-bubble-in');
+                bubble.classList.add('chatbot-bubble-in', 'chatbot-bubble-cta');
               }
-            }, 900);
-            // Hide bubble after 6s
+              if (iconImg) {
+                iconImg.classList.add('chatbot-talking');
+              }
+            }, 2900);
+            // Hide bubble after 6s visible
             setTimeout(() => {
               if (bubble) {
                 bubble.classList.add('hidden');
               }
-            }, 6900);
+              if (iconImg) {
+                iconImg.classList.remove('chatbot-talking');
+              }
+            }, 8900);
             // Mark seen after sequence
             setTimeout(() => {
               try { localStorage.setItem(seenKey, 'true'); } catch {}
@@ -428,6 +436,7 @@ const keywords = generateKeywords();
               sidebarWrapper.classList.remove('chatbot-has-unread');
               if (exclaim) exclaim.classList.add('hidden');
               if (bubble) bubble.classList.add('hidden');
+              if (iconImg) iconImg.classList.remove('chatbot-talking');
             } else {
               sidebarWrapper.style.display = 'block';
               // Re-check if should show badge/pulse
