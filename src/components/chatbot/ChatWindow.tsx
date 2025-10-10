@@ -17,6 +17,8 @@ interface ChatWindowProps {
   isOpen: boolean;
   isMinimized: boolean;
   isTyping: boolean;
+  /** Intro mode enables an extravagant entrance animation */
+  intro?: boolean;
   onSendMessage: (message: string) => void;
   onMinimize: () => void;
   onReset: () => void;
@@ -28,6 +30,7 @@ export default function ChatWindow({
   isOpen,
   isMinimized,
   isTyping,
+  intro = false,
   onSendMessage,
   onMinimize,
   onReset,
@@ -81,6 +84,7 @@ export default function ChatWindow({
   // Full window state
   const reducedMotion = prefersReducedMotion();
   const animationClass = reducedMotion ? '' : 'animate-slide-up';
+  const introClasses = reducedMotion || !intro ? '' : 'chatbot-intro-pop chatbot-intro-spotlight';
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
@@ -94,6 +98,7 @@ export default function ChatWindow({
           flex flex-col
           overflow-hidden
           ${animationClass}
+          ${introClasses}
         `}
         role="dialog"
         aria-labelledby="chatbot-title"
@@ -105,9 +110,10 @@ export default function ChatWindow({
           px-4 py-3
           border-b border-[var(--color-border)]
           bg-[var(--color-bg-tertiary)]
+          ${!reducedMotion && intro ? 'chatbot-intro-shimmer' : ''}
         ">
           <div className="flex items-center gap-2">
-            <img src="/robot.svg" alt="" width="24" height="24" className="opacity-90" />
+            <img src="/robot.svg" alt="" width="24" height="24" className={`opacity-90 ${!reducedMotion && intro ? 'chatbot-intro-wave' : ''}`} />
             <h2 id="chatbot-title" className="text-base font-semibold text-[var(--color-text-primary)]">
               AI Assistant
             </h2>

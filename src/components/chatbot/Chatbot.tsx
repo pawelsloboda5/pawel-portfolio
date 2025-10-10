@@ -31,6 +31,7 @@ export default function Chatbot({ variant = 'desktop' }: ChatbotProps) {
     isMinimized: false,
     isTyping: false
   });
+  const [introActive, setIntroActive] = useState(false);
   
 
   // Load chat history on mount
@@ -43,6 +44,39 @@ export default function Chatbot({ variant = 'desktop' }: ChatbotProps) {
       messages: history,
       isMinimized: minimized
     }));
+
+    // If user has never sent a message, auto-open after 5s with a friendly intro
+    let timer: ReturnType<typeof setTimeout> | null = null;
+    try {
+      const hasAnyUserMessages = history.some(m => m.role === 'user');
+      const hasAnyMessages = history.length > 0;
+      if (!hasAnyUserMessages) {
+        timer = setTimeout(() => {
+          setState(prev => ({ ...prev, isOpen: true, isMinimized: false }));
+          markPulseAsSeen();
+          markChatbotAsOpened();
+          setIntroActive(true);
+
+          // Post an intro greeting only if no messages yet to avoid duplicates
+          if (!hasAnyMessages) {
+            const introMessage = createMessage(
+              'bot',
+              "Hey! I'm Pawel's AI assistant — ask me about his projects, experience, impact, or how to get in touch."
+            );
+            setState(prev => ({
+              ...prev,
+              messages: [...prev.messages, introMessage]
+            }));
+          }
+        }, 5000);
+      }
+    } catch {
+      // no-op
+    }
+
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
   }, []);
 
   // Listen for external open events (from sidebar trigger)
@@ -186,6 +220,7 @@ export default function Chatbot({ variant = 'desktop' }: ChatbotProps) {
           isOpen={state.isOpen}
           isMinimized={state.isMinimized}
           isTyping={state.isTyping}
+          intro={introActive}
           onSendMessage={handleSendMessage}
           onMinimize={handleMinimize}
           onReset={handleReset}
