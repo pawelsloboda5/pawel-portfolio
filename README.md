@@ -54,6 +54,61 @@ npm run build
 
 The built files will be in the `dist/` directory.
 
+## Chatbot
+
+### Features
+
+- **Desktop & Mobile UI**: Floating desktop window (`ChatWindow.tsx`) and mobile drawer experience (`MobileChatView.tsx`)
+- **Quick actions**: Starter prompts when the conversation is empty
+- **Typing indicator + auto-scroll**: Smooth, accessible message flow
+- **History persistence**: Conversation stored in `localStorage` with reset support
+- **Attention pulse**: Subtle pulse on the sidebar robot icon when you reach the Experience section
+- **Link handling**: Plain https links in bot replies are auto-underlined and clickable
+- **Graceful fallback**: If the API is unavailable, a local keyword engine answers basic questions
+
+### How it works
+
+- **Client**: React components in `src/components/chatbot/` orchestrated by `Chatbot.tsx`. Key parts: `ChatWindow.tsx`, `ChatMessages.tsx`, `ChatInput.tsx`, `QuickActions.tsx`, `MessageBubble.tsx`, `ChatbotPulse.tsx`.
+- **Server**: API route `src/pages/api/chatbot.ts` calls the OpenAI Responses API. If it fails or no key is present, the UI falls back to `src/utils/responseEngine.ts`.
+- **Mounting**: The chatbot is already mounted in `src/layouts/Layout.astro` via `<Chatbot client:load variant="desktop" />` and the sidebar robot button dispatches an `openChatbot` event to open it.
+
+### Setup (OpenAI)
+
+1. Create a root environment file and add your OpenAI key [[memory:9665805]]:
+
+```bash
+# pawel-portfolio/.env
+OPENAI_API_KEY=sk-your-openai-key
+```
+
+2. Restart the dev server:
+
+```bash
+npm run dev
+```
+
+3. Verify the API route (optional):
+
+```bash
+curl -X POST http://localhost:4321/api/chatbot \
+  -H "Content-Type: application/json" \
+  -d '{"message":"Hi!"}'
+```
+
+If you see a JSON response with a `text` field, the server integration is working. If not, the UI will automatically use the local fallback.
+
+### Files to know
+
+- `src/pages/api/chatbot.ts`: Server route using `OPENAI_API_KEY` to call OpenAI Responses API
+- `src/components/chatbot/`: Chatbot UI and state management
+- `src/utils/responseEngine.ts`: Local keyword-based fallback answers
+- `src/data/chatbotData.ts`: `chatbotConfig`, `quickActions`, and `keywordPatterns`
+
+### Troubleshooting
+
+- Error: "Missing OPENAI_API_KEY on server" → Add the key to `pawel-portfolio/.env` and restart
+- Error: "Empty response from model" → Temporary model/API issue; the UI will fall back to local responses
+
 ## Customization Guide
 
 Want to use this portfolio as a template for your own? Here's how:
