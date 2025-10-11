@@ -181,4 +181,15 @@ Feel free to reach out if you have any questions or just want to connect!
 - **LinkedIn**: [Pawel Sloboda](https://www.linkedin.com/in/pawel-sloboda-383181216/)
 - **GitHub**: [@pawelsloboda5](https://github.com/pawelsloboda5)
 
+## Quick Access
+
+Scan or click the QR code below to quickly access my resume:
+
+<div align="center">
+  <a href="public/FULL-STACK-AZURE-ENGINEER-PAWEL-SLOBODA.pdf" target="_blank">
+    <img src="public/pawel-portfolio-site-qr.png" alt="QR Code to Pawel Sloboda's Resume" width="200" height="200">
+  </a>
+  <p><em>Scan or click to view my resume</em></p>
+</div>
+
 ---
