@@ -98,5 +98,104 @@ export const featuredProjects: FeaturedProject[] = [
       'Gamified UX with RPG-style levels and achievements',
       'Offline Mode with automatic resync'
     ]
+  },
+  {
+    id: 'missionindex',
+    title: 'MissionIndex',
+    tagline: 'AI Middleware for Government SharePoint',
+    description: `An AI-powered middleware engine for government SharePoint environments that routes natural language queries to structured data, semantic document search, and deep analysis tools. Features a 4-tool AI engine with NL-to-SQL translation, RAG over 25,566 vector-embedded document chunks with sub-100ms HNSW lookups, and a 10-panel Agent Builder for non-technical admins. Built as a monorepo with an Art Deco landing page and Fluent UI v9 agent dashboard.`,
+    mobileDescription: `AI middleware for government SharePoint — routes natural language queries to structured data and semantic document search. Features NL-to-SQL, RAG over 25K+ document chunks, and a 10-panel no-code Agent Builder.`,
+    techStack: [
+      'Next.js 16',
+      'React 19',
+      'TypeScript',
+      'Neon Postgres',
+      'pgvector',
+      'OpenAI GPT-5',
+      'Drizzle ORM',
+      'Turborepo'
+    ],
+    liveUrl: '',
+    githubUrl: undefined,
+    imageUrl: undefined,
+    imageGradient: { from: '#1e3a5f', to: '#0d1b2a' },
+    outcomes: [
+      '42,455+ records across 17 database tables (16,889 structured + 25,566 embedded chunks)',
+      '~76ms average vector query time on 25K+ chunks via HNSW index',
+      'Live demo presented to prospective DoD client (VG Systems)'
+    ],
+    features: [
+      '4-tool AI engine with GPT-5-mini query router',
+      'Natural language to SQL with AST-based injection prevention',
+      'RAG semantic search with sub-100ms HNSW lookups',
+      '10-panel Agent Builder admin dashboard',
+      'Art Deco landing + Fluent UI v9 app (dual UI)'
+    ]
+  },
+  {
+    id: 'fieldliaison',
+    title: 'FieldLiaison',
+    tagline: 'Enterprise CRM for Medical Field Sales',
+    description: `A full-stack, enterprise-grade CRM platform for medical field sales reps and managers. Features territory management over 9M+ NPI provider records with PostGIS spatial queries, route optimization, real-time activity tracking across 7 activity types, Stripe subscription billing, Salesforce bidirectional sync, and offline-first PWA support. 105,800+ lines of TypeScript built solo in 22 days.`,
+    mobileDescription: `Enterprise CRM for medical field sales — territory management over 9M+ NPI records, route optimization, Stripe billing, Salesforce sync, and offline-first PWA. 105K+ lines built in 22 days.`,
+    techStack: [
+      'Next.js 16',
+      'React 19',
+      'TypeScript',
+      'Prisma',
+      'PostgreSQL',
+      'PostGIS',
+      'Stripe',
+      'Supabase'
+    ],
+    liveUrl: '',
+    githubUrl: undefined,
+    imageUrl: undefined,
+    imageGradient: { from: '#1a4731', to: '#0f2b1d' },
+    outcomes: [
+      '105,800+ lines of TypeScript built solo in approximately 22 days',
+      '9M+ NPI provider records with PostGIS spatial queries at O(log n) performance',
+      '96 REST API endpoints, 47 Prisma models, 114 database indexes'
+    ],
+    features: [
+      'Territory management with 9M+ NPI provider search',
+      'Route optimization with TSP-based stop sequencing',
+      'Salesforce bidirectional CRM sync (outbox pattern)',
+      'Stripe billing with 3 tiers and 14-day trial',
+      'Offline-first PWA with IndexedDB sync queue'
+    ]
+  },
+  {
+    id: 'freemanfiling',
+    title: 'FreemanFiling',
+    tagline: 'AI-Powered Medicaid Filing Automation',
+    description: `An AI-powered Medicaid enrollment platform that guides users through multilingual intake wizards and autonomously submits applications on real government portals across 25 U.S. states using a Playwright-based filing agent. Features ARIA-only portal automation (no computer vision), PII isolation architecture where the LLM never sees sensitive data, 20-language support including RTL, and a streaming voice assistant.`,
+    mobileDescription: `AI-powered Medicaid filing automation across 25 U.S. states. Playwright-based agent navigates real government portals with ARIA-only automation. 20-language support and PII isolation architecture.`,
+    techStack: [
+      'Next.js 15',
+      'React 19',
+      'FastAPI',
+      'Playwright',
+      'Azure OpenAI',
+      'Cosmos DB',
+      'Prisma',
+      'Docker'
+    ],
+    liveUrl: 'https://freemanfiling.io',
+    githubUrl: undefined,
+    imageUrl: undefined,
+    imageGradient: { from: '#3b1d6e', to: '#1a0d33' },
+    outcomes: [
+      '25 U.S. states supported with autonomous portal filing',
+      '20 languages including RTL (Arabic, Farsi, Urdu)',
+      '316 reusable React components, 61 Prisma database models'
+    ],
+    features: [
+      'Autonomous Playwright filing agent on government portals',
+      'PII isolation — LLM never sees sensitive data',
+      '4-stage discovery crawler for portal form structures',
+      'Streaming voice assistant (Azure Speech SDK)',
+      'DocuSign-style e-signature ceremony'
+    ]
   }
 ];
