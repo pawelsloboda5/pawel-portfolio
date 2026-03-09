@@ -18,7 +18,9 @@ export const companyLinks = {
   ndu: 'https://www.ndu.edu',
   HealthCareNavigator: 'https://healthcare-cost-navigator.vercel.app/',
   DigitizeMD: 'https://www.digitizemd.com/',
-  SecuSparkoffline_PWA: 'https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps/'
+  SecuSparkoffline_PWA: 'https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps/',
+  CPRMetro: 'https://www.cprmetro.org',
+  FreemanFiling: 'https://freemanfiling.io',
 } as const;
 
 export const projectGithubLinks = {
@@ -27,6 +29,7 @@ export const projectGithubLinks = {
   RustHax: 'https://github.com/pawelsloboda5/rust-YOLOv8-PlayerDetection',
   MLTradingStrategy: 'https://github.com/pawelsloboda5/ML-Trading-Strategy',
   CalworksAnalysis: 'https://github.com/pawelsloboda5/calworks-analysis',
+  CyberCane: 'https://github.com/pawelsloboda5/UMBC-hackathon',
 } as const;
 
 export type SocialLinks = typeof socialLinks;
