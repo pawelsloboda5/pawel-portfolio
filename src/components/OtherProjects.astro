@@ -1,8 +1,7 @@
 ---
-// Other Noteworthy Projects Section - Grid of smaller projects
 import ScrollReveal from './ScrollReveal';
-import ProjectCard from './ProjectCard';
 import { otherProjects } from '../data/otherProjects';
+import FilterableProjectGrid from './FilterableProjectGrid';
 ---
 
 <div class="mt-24 md:mt-32">
@@ -14,18 +13,5 @@ import { otherProjects } from '../data/otherProjects';
     </div>
   </ScrollReveal>
 
-  <!-- Projects Grid -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {otherProjects.map((project, index) => (
-      <ProjectCard 
-        client:load
-        title={project.title}
-        description={project.description}
-        techStack={project.techStack}
-        githubUrl={project.githubUrl}
-        externalUrl={project.externalUrl}
-        delay={index * 100}
-      />
-    ))}
-  </div>
+  <FilterableProjectGrid projects={otherProjects} client:load />
 </div>
