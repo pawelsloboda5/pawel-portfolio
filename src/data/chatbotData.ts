@@ -85,13 +85,19 @@ export const keywordPatterns: KeywordPattern[] = [
     category: 'projects',
     response: `I've worked on some exciting projects! Here are my featured ones:
 
-🏥 **SIE Wellness** - AI-powered health-access platform helping uninsured users find free/low-cost medical care. Built with Next.js, Azure OpenAI, and Cosmos DB. Adopted by 2 shelters and 30+ caseworkers.
+🏥 **SIE Wellness** - AI-powered healthcare discovery platform with semantic search across 50K+ provider services. Adopted by shelters and caseworkers across D.C.
 
-🤖 **Apicus.io** - Automation ROI intelligence platform using RAG and vector search across 500K+ automation combinations. Increased retrieval accuracy by 50%.
+🤖 **Apicus.io** - Automation ROI intelligence platform using RAG and vector search across 500K+ automation combinations.
 
-🎮 **SecuSpark** - Gamified Security+ exam prep app with AI explanations. Scaled to 1,000+ monthly users with 54% engagement increase.
+🎮 **SecuSpark** - Gamified Security+ exam prep app with AI explanations. 1,000+ monthly active users.
 
-Want to know more about any specific project?`
+🏛️ **MissionIndex** - AI middleware for government SharePoint with NL-to-SQL and RAG over 25K+ document chunks.
+
+🏗️ **FieldLiaison** - Enterprise CRM for medical field sales — 105K+ lines of TypeScript, 9M+ NPI records.
+
+📋 **FreemanFiling** - AI-powered Medicaid filing automation across 25 U.S. states.
+
+Plus 18 other noteworthy projects! Want to know more about any specific one?`
   },
   
   // Specific project queries (Priority 9)
@@ -159,7 +165,71 @@ Visit: https://apicus.io`
 
 Try it: https://secuspark.com`
   },
-  
+
+  {
+    keywords: ['missionindex', 'mission index', 'sharepoint', 'government', 'dod', 'agent builder'],
+    priority: 9,
+    category: 'projects',
+    response: `**MissionIndex** is an AI-powered middleware engine for government SharePoint environments.
+
+**Key Features:**
+- 4-tool AI engine with GPT-5-mini query router
+- Natural language to SQL with AST-based injection prevention
+- RAG semantic search over 25,566 document chunks (sub-100ms)
+- 10-panel Agent Builder for non-technical admins
+
+**Impact:**
+- 42,455+ records across 17 database tables
+- ~76ms average vector query time
+- Live demo presented to prospective DoD client
+
+**Tech Stack:** Next.js 16, React 19, Neon Postgres, pgvector, OpenAI GPT-5, Drizzle ORM, Turborepo`
+  },
+
+  {
+    keywords: ['fieldliaison', 'field liaison', 'crm', 'medical sales', 'npi', 'territory'],
+    priority: 9,
+    category: 'projects',
+    response: `**FieldLiaison** is a full-stack enterprise CRM for medical field sales reps and managers.
+
+**Key Features:**
+- Territory management over 9M+ NPI provider records
+- Route optimization with TSP-based stop sequencing
+- Salesforce bidirectional sync (outbox pattern)
+- Stripe billing with 3 tiers and 14-day trial
+- Offline-first PWA with IndexedDB sync
+
+**Impact:**
+- 105,800+ lines of TypeScript built solo in ~22 days
+- 96 REST API endpoints, 47 Prisma models
+- 9M+ NPI records with PostGIS spatial queries
+
+**Tech Stack:** Next.js 16, React 19, Prisma, PostgreSQL, PostGIS, Stripe, Supabase`
+  },
+
+  {
+    keywords: ['freemanfiling', 'freeman filing', 'medicaid', 'filing', 'enrollment', 'playwright'],
+    priority: 9,
+    category: 'projects',
+    response: `**FreemanFiling** is an AI-powered Medicaid enrollment platform automating applications across 25 U.S. states.
+
+**Key Features:**
+- Autonomous Playwright filing agent on real government portals
+- PII isolation — the LLM never sees sensitive data
+- 20-language support including RTL (Arabic, Farsi, Urdu)
+- Streaming voice assistant (Azure Speech SDK)
+- DocuSign-style e-signature ceremony
+
+**Impact:**
+- 25 states with autonomous portal filing
+- 316 reusable React components, 61 Prisma models
+- ARIA-only automation (no computer vision needed)
+
+**Tech Stack:** Next.js 15, FastAPI, Playwright, Azure OpenAI, Cosmos DB, Prisma, Docker
+
+Visit: https://freemanfiling.io`
+  },
+
   // Experience (Priority 10)
   {
     keywords: ['experience', 'work', 'worked', 'job', 'jobs', 'career', 'employment', 'companies', 'company'],
@@ -334,9 +404,10 @@ Feel free to share it with anyone who might be interested. If you have any quest
 Started with Adobe Flash games on Kongregate that reached 50,000+ gameplays. That early experience of building something people actually used sparked a passion that shaped my entire career.
 
 **Recent Work:**
-- Built AI health platforms at a social impact startup
+- Built AI health platforms and enterprise CRM systems
 - Developed ML pipelines at Adobe
 - Engineered cybersecurity infrastructure for the Department of Defense
+- Built 24 projects spanning AI, data engineering, and full-stack development
 
 **What I Do:**
 I specialize in full-stack development with a focus on AI integration, vector search, and data engineering. I love tackling complex problems like semantic search across 50K+ services and real-time ML inference.
@@ -381,7 +452,7 @@ Is there anything else you'd like to know about Pawel's work or experience? I'm 
     response: `I'm not sure I understand that question, but I'd love to help! 
 
 I can tell you about:
-- **Projects**: SIE Wellness, Apicus.io, SecuSpark, and more
+- **Projects**: SIE Wellness, Apicus.io, SecuSpark, MissionIndex, FieldLiaison, FreemanFiling, and 18 more
 - **Experience**: Social Impact Enterprise, DoD, Adobe
 - **Skills**: AI/ML, full-stack development, cloud infrastructure
 - **Contact**: Email, LinkedIn, or resume download
