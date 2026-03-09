@@ -62,7 +62,7 @@ export default function ProjectCard({
   return (
     <article
       ref={cardRef}
-      className="group relative bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-lg p-6 md:p-8 hover:border-[var(--color-accent-primary)] hover:-translate-y-2 transition-all duration-300 flex flex-col h-full"
+      className="group relative bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-lg p-6 md:p-8 hover:border-[var(--color-accent-primary)] hover:-translate-y-2 transition-[border-color,transform] duration-300 flex flex-col h-full"
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -77,6 +77,7 @@ export default function ProjectCard({
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
+          aria-hidden="true"
         >
           <path
             strokeLinecap="round"
@@ -94,7 +95,7 @@ export default function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub repository"
-              className="text-[var(--color-text-secondary)] hover:text-[var(--color-accent-primary)] transition-colors"
+              className="text-[var(--color-text-secondary)] hover:text-[var(--color-accent-primary)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-primary)] rounded"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +116,7 @@ export default function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               aria-label="External link"
-              className="text-[var(--color-text-secondary)] hover:text-[var(--color-accent-primary)] transition-colors"
+              className="text-[var(--color-text-secondary)] hover:text-[var(--color-accent-primary)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-primary)] rounded"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +139,7 @@ export default function ProjectCard({
       {/* Title */}
       <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-3 group-hover:text-[var(--color-accent-primary)] transition-colors">
         {externalUrl ? (
-          <a href={externalUrl} target="_blank" rel="noopener noreferrer">
+          <a href={externalUrl} target="_blank" rel="noopener noreferrer" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-primary)] rounded">
             {title}
           </a>
         ) : (
