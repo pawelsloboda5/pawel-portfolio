@@ -124,17 +124,15 @@ import { companyLinks } from '../data/links';
       <div class="md:col-span-2 relative group max-w-[280px] md:max-w-none mx-auto md:mx-0">
         <ScrollReveal client:load variant="slide-up" duration={600} threshold={0.15} delay={1700} distance={30} className="md:!delay-[600ms]">
           <div class="relative z-10 rounded-lg overflow-hidden border-2 border-[var(--color-accent-primary)] hover:border-[var(--color-accent-secondary)] transition-colors duration-300">
-            <div class="aspect-square bg-[#8b5cf6]">
-              <img 
-                src="/my-picture.png" 
-                alt="Pawel Sloboda" 
+            <div class="aspect-square">
+              <img
+                src="/my-picture.png"
+                alt="Pawel Sloboda"
                 class="profile-image w-full h-full object-cover"
                 loading="eager"
                 decoding="async"
               />
             </div>
-            <!-- Purple overlay -->
-            <div class="absolute inset-0 bg-[#8b5cf6] mix-blend-screen opacity-60 group-hover:opacity-0 transition-all duration-300"></div>
           </div>
           <!-- Background decoration -->
           <div class="absolute top-5 left-5 w-full h-full border-2 border-[var(--color-accent-primary)] rounded-lg -z-10 group-hover:top-6 group-hover:left-6 transition-all duration-300"></div>
@@ -146,8 +144,8 @@ import { companyLinks } from '../data/links';
 
 <style>
   .profile-image {
-    filter: grayscale(100%) contrast(1.2) brightness(1.1);
-    mix-blend-mode: multiply;
+    filter: none;
+    mix-blend-mode: normal;
     transition: all 0.3s ease;
   }
 

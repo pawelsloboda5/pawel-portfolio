@@ -12,7 +12,7 @@ import { featuredProjects } from '../data/featuredProjects';
     
     return (
       <ScrollReveal client:load variant="slide-up" duration={600} threshold={0.1} delay={100} distance={30}>
-        <li class={`featured-project ${layoutClass}`}>
+        <li class={`featured-project ${layoutClass}`} data-project={project.id}>
           <!-- Project Content -->
           <div class="project-content">
             <p class="project-overline">Featured Project</p>
@@ -436,6 +436,15 @@ import { featuredProjects } from '../data/featuredProjects';
     filter: contrast(1.08) brightness(1.08) saturate(1.1);
     transform: scale(1.05);
     mix-blend-mode: normal;
+  }
+
+  /* FreemanFiling: slightly more zoomed default */
+  [data-project="freemanfiling"] .img {
+    transform: scale(1.1);
+  }
+
+  [data-project="freemanfiling"] .project-image:hover .img {
+    transform: scale(1.15);
   }
 
   /* Mobile Styles */

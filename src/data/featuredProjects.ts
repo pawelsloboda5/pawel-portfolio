@@ -85,7 +85,7 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     liveUrl: 'https://secuspark.com',
     githubUrl: undefined, // Private repository
-    imageUrl: '/secuspark-photo.png',
+    imageUrl: '/secuspark-screenshot.png',
     outcomes: [
       'Scaled to 1,000+ monthly active users',
       'Boosted engagement rates with 54% increase in session duration',
@@ -117,8 +117,7 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     liveUrl: '',
     githubUrl: undefined,
-    imageUrl: undefined,
-    imageGradient: { from: '#1e3a5f', to: '#0d1b2a' },
+    imageUrl: '/mission-index-image.png',
     outcomes: [
       '42,455+ records across 17 database tables (16,889 structured + 25,566 embedded chunks)',
       '~76ms average vector query time on 25K+ chunks via HNSW index',
@@ -150,8 +149,7 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     liveUrl: '',
     githubUrl: undefined,
-    imageUrl: undefined,
-    imageGradient: { from: '#1a4731', to: '#0f2b1d' },
+    imageUrl: '/field-liaison.png',
     outcomes: [
       '105,800+ lines of TypeScript built solo in approximately 22 days',
       '9M+ NPI provider records with PostGIS spatial queries at O(log n) performance',
@@ -183,8 +181,7 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     liveUrl: 'https://freemanfiling.io',
     githubUrl: undefined,
-    imageUrl: undefined,
-    imageGradient: { from: '#3b1d6e', to: '#1a0d33' },
+    imageUrl: '/freemanfiling-website-screenshot.png',
     outcomes: [
       '25 U.S. states supported with autonomous portal filing',
       '20 languages including RTL (Arabic, Farsi, Urdu)',

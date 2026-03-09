@@ -1,0 +1,79 @@
+# ----------------------------------------
+# Traffic acquisition: Session source / medium
+# Account: SecuSpark
+# Property: SecuSparl-property
+# ----------------------------------------
+# 
+# All Users
+# Start date: 20251209
+# End date: 20260308
+Session source / medium,Sessions,Engaged sessions,Engagement rate,Average engagement time per session,Events per session,Event count,Key events,Session key event rate,Total revenue
+(direct) / (none),667,264,0.39580209895052476,224.17541229385307,6.859070464767616,4575,0,0,0
+bing / organic,497,306,0.6156941649899397,280.32394366197184,5.579476861167002,2773,0,0,0
+google / organic,302,168,0.5562913907284768,214.76158940397352,5.817880794701987,1757,0,0,0
+chatgpt.com / referral,224,135,0.6026785714285714,578.9017857142857,8.401785714285714,1882,0,0,0
+chatgpt.com / (not set),103,60,0.5825242718446602,182.01941747572815,5.553398058252427,572,0,0,0
+yahoo / organic,63,41,0.6507936507936508,413.7936507936508,7.492063492063492,472,0,0,0
+duckduckgo / organic,57,40,0.7017543859649122,281.859649122807,6.807017543859649,388,0,0,0
+accounts.google.com / referral,51,37,0.7254901960784313,137.2941176470588,8.941176470588236,456,0,0,0
+statics.teams.cdn.office.net / referral,33,26,0.7878787878787878,412,6.545454545454546,216,0,0,0
+copilot.com / referral,19,12,0.631578947368421,117.84210526315789,6.157894736842105,117,0,0,0
+copilot.microsoft.com / referral,15,9,0.6,263.26666666666665,9.066666666666666,136,0,0,0
+vercel.com / referral,14,9,0.6428571428571429,108.07142857142857,10.5,147,0,0,0
+(not set),12,0,0,172.66666666666666,4.666666666666667,56,0,0,0
+perplexity / (not set),6,3,0.5,123.16666666666667,6,36,0,0,0
+butlertech.schoology.com / referral,4,3,0.75,43,5,20,0,0,0
+ig_text_search_serp_top / (not set),4,1,0.25,70.5,5,20,0,0,0
+perplexity.ai / referral,4,2,0.5,17.5,4.25,17,0,0,0
+uk.search.yahoo.com / referral,4,1,0.25,15.5,5,20,0,0,0
+gemini.google.com / referral,3,2,0.6666666666666666,112,4,12,0,0,0
+agent55.com / referral,2,1,0.5,2.5,4.5,9,0,0,0
+pepesearch.com / referral,2,1,0.5,4.5,4.5,9,0,0,0
+search.google.com / referral,2,1,0.5,10.5,2.5,5,0,0,0
+altavista.com / referral,1,0,0,2,4,4,0,0,0
+blinkx.com / referral,1,1,1,27,5,5,0,0,0
+ca.search.yahoo.com / referral,1,1,1,23,6,6,0,0,0
+claude.ai / referral,1,0,0,9,4,4,0,0,0
+cn.bing.com / referral,1,1,1,164,6,6,0,0,0
+copilot.com / (not set),1,1,1,183,10,10,0,0,0
+ecosia.org / organic,1,1,1,10,5,5,0,0,0
+facebook.com / referral,1,1,1,7,4,4,0,0,0
+factbites.com / referral,1,0,0,1,5,5,0,0,0
+forelook.com / referral,1,1,1,1,4,4,0,0,0
+gigablast.com / referral,1,0,0,1,5,5,0,0,0
+greenmaven.com / referral,1,0,0,2,5,5,0,0,0
+hotbot.com / referral,1,0,0,2,4,4,0,0,0
+huubs.imente.com / referral,1,0,0,0,4,4,0,0,0
+icerocket.com / referral,1,0,0,0,4,4,0,0,0
+ig_text_search_serp_top / referral,1,0,0,0,3,3,0,0,0
+in.search.yahoo.com / referral,1,1,1,11,5,5,0,0,0
+incogna.com / referral,1,0,0,3,5,5,0,0,0
+ixquick.com / referral,1,0,0,2,4,4,0,0,0
+l.threads.com / referral,1,0,0,0,3,3,0,0,0
+lexisweb.com / referral,1,1,1,7,4,4,0,0,0
+linkedin.com / referral,1,1,1,9,5,5,0,0,0
+merobase.com / referral,1,1,1,4,4,4,0,0,0
+monstercrawler.com / referral,1,1,1,7,4,4,0,0,0
+notebooklm.google.com / referral,1,1,1,8,4,4,0,0,0
+odiasearch.com / referral,1,0,0,1,4,4,0,0,0
+picfindr.com / referral,1,0,0,0,5,5,0,0,0
+pptsearch365.com / referral,1,0,0,2,4,4,0,0,0
+querycat.com / referral,1,1,1,2,4,4,0,0,0
+roozzy.com / referral,1,0,0,2,4,4,0,0,0
+safe.menlosecurity.com / referral,1,1,1,86,4,4,0,0,0
+search66.com / referral,1,0,0,2,4,4,0,0,0
+searchezee.com / referral,1,0,0,2,4,4,0,0,0
+seeaarch.com / referral,1,0,0,0,4,4,0,0,0
+sency.com / referral,1,0,0,0,4,4,0,0,0
+simmani.com / referral,1,0,0,2,5,5,0,0,0
+simplyhired.com / referral,1,0,0,0,4,4,0,0,0
+soku.com / referral,1,0,0,2,4,4,0,0,0
+sysoon.com / referral,1,0,0,13,4,4,0,0,0
+trooker.com / referral,1,0,0,2,5,5,0,0,0
+tw.search.yahoo.com / referral,1,1,1,199,8,8,0,0,0
+twicsy.com / referral,1,0,0,0,3,3,0,0,0
+x.com / referral,1,1,1,11,4,4,0,0,0
+yahoo.com / referral,1,0,0,2,5,5,0,0,0
+yippy.com / referral,1,0,0,3,4,4,0,0,0
+zanran.com / referral,1,0,0,4,4,4,0,0,0
+zhongsou.com / referral,1,0,0,3,4,4,0,0,0

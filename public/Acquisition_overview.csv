@@ -1,0 +1,302 @@
+# ----------------------------------------
+# Acquisition overview
+# Account: SecuSpark
+# Property: SecuSparl-property
+# ----------------------------------------
+#  
+# Start date: 20251209
+# End date: 20260308
+Nth week,Active users
+0000,41
+0001,49
+0002,60
+0003,82
+0004,114
+0005,139
+0006,100
+0007,75
+0008,79
+0009,81
+0010,74
+0011,92
+0012,84
+0013,16
+
+# Start date: 20251209
+# End date: 20260308
+Nth week,New users
+0000,32
+0001,36
+0002,55
+0003,69
+0004,101
+0005,122
+0006,86
+0007,61
+0008,65
+0009,68
+0010,66
+0011,76
+0012,68
+0013,8
+
+#  
+# Start date: 20251209
+# End date: 20260308
+First user primary channel group (Default Channel Group),New users
+Direct,411
+Organic Search,303
+Referral,140
+Unassigned,57
+Organic Social,2
+
+#  
+# Start date: 20251209
+# End date: 20260308
+Session primary channel group (Default Channel Group),Sessions
+Organic Search,931
+Direct,667
+Referral,410
+Unassigned,126
+Organic Social,2
+
+#  
+# Start date: 20251209
+# End date: 20260308
+Session Google Ads campaign,Sessions
+
+
+#  
+# Start date: 20251109
+# End date: 20260308
+Cohort,Average 120d value
+0000,0
+0001,0
+0002,0
+0003,0
+0004,0
+0005,0
+0006,0
+0007,0
+0008,0
+0009,0
+0010,0
+0011,0
+0012,0
+0013,0
+0014,0
+0015,0
+0016,0
+0017,0
+0018,0
+0019,0
+0020,0
+0021,0
+0022,0
+0023,0
+0024,0
+0025,0
+0026,0
+0027,0
+0028,0
+0029,0
+0030,0
+0031,0
+0032,0
+0033,0
+0034,0
+0035,0
+0036,0
+0037,0
+0038,0
+0039,0
+0040,0
+0041,0
+0042,0
+0043,0
+0044,0
+0045,0
+0046,0
+0047,0
+0048,0
+0049,0
+0050,0
+0051,0
+0052,0
+0053,0
+0054,0
+0055,0
+0056,0
+0057,0
+0058,0
+0059,0
+0060,0
+0061,0
+0062,0
+0063,0
+0064,0
+0065,0
+0066,0
+0067,0
+0068,0
+0069,0
+0070,0
+0071,0
+0072,0
+0073,0
+0074,0
+0075,0
+0076,0
+0077,0
+0078,0
+0079,0
+0080,0
+0081,0
+0082,0
+0083,0
+0084,0
+0085,0
+0086,0
+0087,0
+0088,0
+0089,0
+0090,0
+0091,0
+0092,0
+0093,0
+0094,0
+0095,0
+0096,0
+0097,0
+0098,0
+0099,0
+0100,0
+0101,0
+0102,0
+0103,0
+0104,0
+0105,0
+0106,0
+0107,0
+0108,0
+0109,0
+0110,0
+0111,0
+0112,0
+0113,0
+0114,0
+0115,0
+0116,0
+0117,0
+0118,0
+0119,0
+
+#  
+# Start date: 20251209
+# End date: 20260308
+Landing page + query string,Organic Google Search impressions
+/blog/remote-cybersecurity-jobs-no-experience,10404
+/blog/is-comptia-security-plus-worth-it-2026,8646
+/blog/a-plus-vs-network-plus-which-first,6885
+/blog/security-plus-pass-rate-statistics,6445
+/blog/how-hard-is-security-plus-exam,4911
+/blog/how-to-pass-security-plus-30-days,2128
+/,2007
+/blog,497
+/exam?cert=network-plus,183
+/stats,157
+/map,137
+/terms,97
+/privacy,62
+/blog/25-cybersecurity-threats-you-will-battle-in-secuspark,10
+/sitemap.xml,2
+
+#  
+# Start date: 20251209
+# End date: 20260308
+Organic Google Search query,Organic Google Search clicks
+secuspark,85
+comptia sec+ passing score,1
+comptia secure infrastructure specialist – csis stackable certification,1
+comptia security plus salary,1
+comptia security+ exam cost,1
+cyber security jobs,1
+cyber security work from home jobs no experience,1
+entry level soc analyst jobs remote no experience,1
+how hard is the comptia security+ exam,1
+is network+ easier than security+,1
+is security + hard,1
+sec+ pass rate,1
+security + pass rate,1
+security+ passing score,1
+which is harder network+ or security+,1
+worth to do,1
+
+#  
+# Start date: 20251209
+# End date: 20260308
+Session manual source,Sessions
+bing,497
+chatgpt.com,327
+google,302
+yahoo,63
+duckduckgo,57
+accounts.google.com,51
+statics.teams.cdn.office.net,33
+copilot.com,20
+copilot.microsoft.com,15
+vercel.com,14
+perplexity,6
+ig_text_search_serp_top,5
+butlertech.schoology.com,4
+perplexity.ai,4
+uk.search.yahoo.com,4
+gemini.google.com,3
+agent55.com,2
+pepesearch.com,2
+search.google.com,2
+altavista.com,1
+blinkx.com,1
+ca.search.yahoo.com,1
+claude.ai,1
+cn.bing.com,1
+ecosia.org,1
+facebook.com,1
+factbites.com,1
+forelook.com,1
+gigablast.com,1
+greenmaven.com,1
+hotbot.com,1
+huubs.imente.com,1
+icerocket.com,1
+in.search.yahoo.com,1
+incogna.com,1
+ixquick.com,1
+l.threads.com,1
+lexisweb.com,1
+linkedin.com,1
+merobase.com,1
+monstercrawler.com,1
+notebooklm.google.com,1
+odiasearch.com,1
+picfindr.com,1
+pptsearch365.com,1
+querycat.com,1
+roozzy.com,1
+safe.menlosecurity.com,1
+search66.com,1
+searchezee.com,1
+seeaarch.com,1
+sency.com,1
+simmani.com,1
+simplyhired.com,1
+soku.com,1
+sysoon.com,1
+trooker.com,1
+tw.search.yahoo.com,1
+twicsy.com,1
+x.com,1
+yahoo.com,1
+yippy.com,1
+zanran.com,1
+zhongsou.com,1

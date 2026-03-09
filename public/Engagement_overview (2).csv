@@ -1,0 +1,416 @@
+# ----------------------------------------
+# Engagement overview
+# Account: SecuSpark
+# Property: SecuSparl-property
+# ----------------------------------------
+#  
+# Start date: 20251209
+# End date: 20260308
+Nth week,Average engagement time per active user
+0000,518.3170731707318
+0001,384.8979591836735
+0002,162.96666666666667
+0003,532.7317073170732
+0004,711.4122807017544
+0005,487.53956834532374
+0006,416.47
+0007,431.73333333333335
+0008,426
+0009,152.37037037037038
+0010,379.5
+0011,1045.5217391304348
+0012,997.9047619047619
+0013,411.8125
+
+# Start date: 20251209
+# End date: 20260308
+Nth week,Engaged sessions per active user
+0000,1.6585365853658536
+0001,1.0204081632653061
+0002,0.5
+0003,1.2804878048780488
+0004,1.1403508771929824
+0005,0.7913669064748201
+0006,0.8
+0007,1.0266666666666666
+0008,1.0379746835443038
+0009,0.5802469135802469
+0010,0.9459459459459459
+0011,1.4130434782608696
+0012,1.6547619047619047
+0013,1.375
+
+# Start date: 20251209
+# End date: 20260308
+Nth week,Average engagement time per session
+0000,183.19827586206895
+0001,202.79569892473117
+0002,126.98701298701299
+0003,264.75151515151515
+0004,351.0865800865801
+0005,295.9301310043668
+0006,235.29378531073445
+0007,210.25974025974025
+0008,225.86577181208054
+0009,105.48717948717949
+0010,209.57462686567163
+0011,411.05982905982904
+0012,366.04366812227073
+0013,199.66666666666666
+
+#  
+# Start date: 20251209
+# End date: 20260308
+Nth week,Views
+0000,296
+0001,252
+0002,153
+0003,488
+0004,743
+0005,667
+0006,433
+0007,395
+0008,400
+0009,200
+0010,299
+0011,997
+0012,1014
+0013,367
+
+# Start date: 20251209
+# End date: 20260308
+Nth week,Event count
+0000,593
+0001,540
+0002,416
+0003,1013
+0004,1485
+0005,1392
+0006,959
+0007,837
+0008,830
+0009,531
+0010,674
+0011,2035
+0012,1870
+0013,731
+
+#  
+# Start date: 20251209
+# End date: 20260308
+Event name,Event count
+page_view,6704
+session_start,2127
+scroll,1508
+user_engagement,1471
+exam_page_visit_event,1167
+first_visit,913
+form_start,16
+
+#  
+# Start date: 20251209
+# End date: 20260308
+Page title and screen class,Views
+Free Security+ Practice Tests 2025 | 575 SY0-701 Questions | SecuSpark,1641
+CompTIA Certification Practice Exams | SecuSpark,1138
+Exam Results & AI Analysis | SecuSpark | SecuSpark,679
+SecuSpark - CompTIA Certification Practice Exams & AI Tutor,629
+Free CompTIA Practice Exams 2026 | Security+ A+ Network+ Questions | SecuSpark,565
+CompTIA Practice Exams & RPG Study Game — SecuSpark,355
+Security+ Flashcards with AI | Spaced Repetition Study Tool | SecuSpark,214
+Battle Arena — Fight 103 Cybersecurity Threats | SecuSpark | SecuSpark,121
+Exámenes de práctica gratuitos de CompTIA 2026 | Preguntas de Security+ A+ Network+ | SecuSpark,95
+"Track CompTIA Progress Like a Video Game — XP, Streaks, Badges | SecuSpark",81
+Practice Exam,75
+Track Your CompTIA Certification Progress | SecuSpark Stats | SecuSpark,72
+Remote Cybersecurity Jobs With No Experience: Complete 2026 Guide | SecuSpark Blog | SecuSpark,71
+Battle | SecuSpark | SecuSpark,64
+Resultados de exámenes y análisis de IA | SecuSpark | SecuSpark,59
+Free CompTIA Flashcards 2026 | Security+ A+ Network+ Study Cards | SecuSpark,58
+Exámenes de práctica para la certificación CompTIA | SecuSpark,48
+Weekly Leagues — Compete from Bronze to Gold | SecuSpark | SecuSpark,48
+AI Exam Review — Every Wrong Answer Explained with Mnemonics | SecuSpark,44
+Inventory | SecuSpark | SecuSpark,44
+Security+ Study Guides & Resources | Free CompTIA Prep | SecuSpark,43
+"1,514 CompTIA Practice Questions (2026) — RPG Gamified | Security+ A+ Network+ | SecuSpark",39
+Campaign Leaderboard — Weekly Star Rankings | SecuSpark | SecuSpark,39
+Your CompTIA Progress Stats & Achievements | SecuSpark | SecuSpark,36
+"100 Items to Collect — Weapons, Helmets, Armor, Shields | SecuSpark | SecuSpark",26
+Security+ Pass Rate Statistics 2026: What Percentage Pass the Exam? | SecuSpark Blog | SecuSpark,21
+Examen de práctica,19
+How Hard Is Security+? Honest Difficulty Assessment for 2026 | SecuSpark Blog | SecuSpark,18
+CompTIA Security+ Practice Exams | SecuSpark,17
+How to Pass Security+ in 30 Days: Complete Study Guide | SecuSpark Blog | SecuSpark,17
+CompTIA Flashcards with AI + Spaced Repetition (2026) | SecuSpark,16
+DoD 8570 & 8140 Security+ Requirements: Complete Guide for Government Cybersecurity Jobs | SecuSpark Blog | SecuSpark,15
+Repaso del examen de IA: cada respuesta incorrecta explicada con mnemotecnia | SecuSpark,15
+Is CompTIA Security+ Worth It in 2026? Complete ROI Analysis | SecuSpark Blog | SecuSpark,14
+Features | SecuSpark,12
+Free CompTIA Practice Exams & RPG Study Game — SecuSpark,11
+1514 preguntas de práctica de CompTIA (2026) — RPG Gamificado | Seguridad+ A+ Red+ | SecuSpark,10
+A+ vs Network+: Which CompTIA Certification Should You Get First in 2026? | SecuSpark Blog | SecuSpark,10
+"Features — RPG Battles, AI Explanations, PvP Arena & More | SecuSpark",10
+CompTIA Certification Path Order: The Complete 2026 Roadmap for IT Beginners & Career Changers | SecuSpark Blog | SecuSpark,9
+CompTIA Security+ Salary Guide 2025: What to Expect | SecuSpark Blog | SecuSpark,8
+CompTIA Study Guides That Actually Help You Pass (2026) | SecuSpark,7
+CompTIA-Zertifizierungs-Übungsprüfungen | SecuSpark,7
+Testes Práticos Gratuitos para a Certificação Security+ 2025 | 575 Questões SY0-701 | SecuSpark,6
+"CompTIA Security+ Training in San Jose, California | Free Practice Exams | SecuSpark",5
+Exames Práticos de Certificação CompTIA | SecuSpark,5
+SecuSpark Launches RPG Battle Mode: Turn CompTIA Exam Prep Into an Epic Adventure | SecuSpark Blog | SecuSpark,5
+Security+ Learning Map | Domain Progress Tracker | SecuSpark,5
+Security+ Pass Rate: Only ~50% Pass First Try (2026 Stats) | SecuSpark Blog | SecuSpark,5
+"103 Enemies, 3 Career Classes, and AI-Enriched Questions: SecuSpark's Biggest Content Drop | SecuSpark Blog | SecuSpark",4
+Battle Arena | SecuSpark | SecuSpark,4
+CompTIA Certification Training by Location | Find Classes Near You | SecuSpark,4
+"CompTIA Security+ Training in New York, New York | Free Practice Exams | SecuSpark",4
+"CompTIA Security+ Training in Philadelphia, Pennsylvania | Free Practice Exams | SecuSpark",4
+"CompTIA Security+ Training in Phoenix, Arizona | Free Practice Exams | SecuSpark",4
+"CompTIA Security+ Training in Pittsburgh, Pennsylvania | Free Practice Exams | SecuSpark",4
+"CompTIA Security+ Training in Portland, Oregon | Free Practice Exams | SecuSpark",4
+"CompTIA Security+ Training in San Antonio, Texas | Free Practice Exams | SecuSpark",4
+"CompTIA Security+ Training in San Francisco, California | Free Practice Exams | SecuSpark",4
+"CompTIA Security+ Training in Washington, District of Columbia | Free Practice Exams | SecuSpark",4
+"CompTIA Study Guides & Resources | Security+, A+, Network+ Prep | SecuSpark",4
+Kostenlose Security+ Übungstests 2025 | 575 SY0-701 Fragen | SecuSpark,4
+Pass Security+ in 30 Days — Day-by-Day Study Plan (Free) | SecuSpark Blog | SecuSpark,4
+Prüfungsergebnisse & KI-Analyse | SecuSpark | SecuSpark,4
+Resultados de Exames e Análise de IA | SecuSpark | SecuSpark,4
+Terms of Service | SecuSpark,4
+A+ vs Network+: Which CompTIA Cert First? (Decision Matrix) | SecuSpark Blog | SecuSpark,3
+"CompTIA Security+ Training in Orlando, Florida | Free Practice Exams | SecuSpark",3
+"CompTIA Security+ Training in Raleigh, North Carolina | Free Practice Exams | SecuSpark",3
+"CompTIA Security+ Training in Salt Lake City, Utah | Free Practice Exams | SecuSpark",3
+"CompTIA Security+ Training in San Diego, California | Free Practice Exams | SecuSpark",3
+"CompTIA Security+ Training in Seattle, Washington | Free Practice Exams | SecuSpark",3
+Is Security+ Worth It? $17K Salary Bump Says Yes (2026 Data) | SecuSpark Blog | SecuSpark,3
+Pricing Plans — CompTIA Exam Prep from Free | SecuSpark,3
+Pricing | SecuSpark,3
+"Pricing — Free to Start, Campaign Pass $49 for 90 Days | SecuSpark",3
+Privacy Policy | SecuSpark,3
+Sign In to SecuSpark | SecuSpark,3
+About | SecuSpark,2
+"CompTIA Security+ Training in Austin, Texas | Free Practice Exams | SecuSpark",2
+"CompTIA Security+ Training in Tampa, Florida | Free Practice Exams | SecuSpark",2
+"Exames Práticos Gratuitos da CompTIA 2026 | Questões Security+, A+ e Network+ | SecuSpark",2
+How Long to Study for Security+? Complete Time Guide for 2026 | SecuSpark Blog | SecuSpark,2
+Meet the 103 Cyber Threats You'll Battle in SecuSpark: The Complete Visual Bestiary | SecuSpark Blog | SecuSpark,2
+Meet the 50 Cyber Threats You'll Battle in SecuSpark: A Visual Bestiary | SecuSpark Blog | SecuSpark,2
+Post Not Found | SecuSpark Blog | SecuSpark,2
+SecuSpark – CompTIA-Zertifizierungsprüfungen: Übungsprüfungen & KI-Tutor,2
+Security+ vs CySA+ vs CISSP: Which Certification is Right for You? | SecuSpark Blog | SecuSpark,2
+Security+ vs Network+: Which CompTIA Certification Should You Get First? | SecuSpark Blog | SecuSpark,2
+CompTIA Certification Learning Map | Visual Domain Progress | SecuSpark,1
+CompTIA Network+ Practice Exams | SecuSpark,1
+"CompTIA Security+ Training in Boston, Massachusetts | Free Practice Exams | SecuSpark",1
+"CompTIA Security+ Training in Charlotte, North Carolina | Free Practice Exams | SecuSpark",1
+"CompTIA Security+ Training in Dallas, Texas | Free Practice Exams | SecuSpark",1
+"CompTIA Security+ Training in Houston, Texas | Free Practice Exams | SecuSpark",1
+"CompTIA Security+ Training in Indianapolis, Indiana | Free Practice Exams | SecuSpark",1
+"CompTIA Security+ Training in Miami, Florida | Free Practice Exams | SecuSpark",1
+CompTIA認證練習題 | SecuSpark,1
+Cómo aprobar Security+ en 30 días: Guía de estudio completa | Blog de SecuSpark | SecuSpark,1
+Exames Práticos para Certificação CompTIA | SecuSpark,1
+Flashcards Security+ com IA | Ferramenta de estudo com repetição espaçada | SecuSpark,1
+Free CompTIA Flashcards with AI + Spaced Repetition (2026) | SecuSpark,1
+Guía salarial de CompTIA Security+ 2025: Qué esperar | Blog de SecuSpark | SecuSpark,1
+"March 2026 Update: Competitive Leagues, Smarter Loot, and a Free Tinfoil Hat for Every Player | SecuSpark Blog | SecuSpark",1
+Pruebas de práctica gratuitas de Security+ 2025 | 575 preguntas SY0-701 | SecuSpark,1
+PvP Arena — Duel Other Players in CompTIA Knowledge Battles | SecuSpark,1
+Remote Cybersecurity Jobs (No Experience) — 2026 Hiring Guide | SecuSpark Blog | SecuSpark,1
+SecuSpark - Exames Práticos para Certificação CompTIA e Tutor de IA,1
+SecuSpark - Exámenes de práctica de certificación CompTIA y tutor de IA,1
+SecuSpark - Free CompTIA Security+ Practice Exams | A+ & Network+ Study Tools,1
+SecuSpark - Oefenexamens voor CompTIA-certificering & AI-tutor,1
+Tarjetas de estudio gratuitas de CompTIA 2026 | Security+ A+ Network+ | SecuSpark,1
+Trabajos remotos en ciberseguridad sin experiencia: Guía completa para 2026 | Blog de SecuSpark | SecuSpark,1
+
+# How are active users trending?
+# Start date: 20251209
+# End date: 20260308
+Nth day,30 days,7 days,1 day
+0000,235,63,11
+0001,232,57,13
+0002,229,60,16
+0003,213,60,10
+0004,205,56,3
+0005,204,55,5
+0006,206,52,12
+0007,206,53,10
+0008,205,53,9
+0009,203,53,15
+0010,205,49,5
+0011,201,49,2
+0012,195,50,5
+0013,199,44,5
+0014,199,42,8
+0015,203,42,6
+0016,222,59,31
+0017,219,56,2
+0018,218,60,6
+0019,217,63,9
+0020,224,68,11
+0021,232,75,17
+0022,236,81,16
+0023,230,57,10
+0024,226,66,16
+0025,236,82,22
+0026,250,95,24
+0027,256,100,21
+0028,269,106,20
+0029,276,114,28
+0030,285,122,22
+0031,291,123,16
+0032,289,114,12
+0033,293,106,18
+0034,312,116,28
+0035,361,153,57
+0036,365,146,15
+0037,367,138,13
+0038,371,139,14
+0039,367,139,10
+0040,368,129,8
+0041,378,120,17
+0042,386,81,14
+0043,409,96,33
+0044,412,96,15
+0045,417,97,16
+0046,400,100,15
+0047,406,105,12
+0048,416,107,19
+0049,426,112,22
+0050,424,90,9
+0051,416,83,10
+0052,414,81,14
+0053,414,75,7
+0054,407,68,3
+0055,397,65,12
+0056,383,54,10
+0057,377,54,9
+0058,381,68,22
+0059,372,64,14
+0060,378,79,22
+0061,411,120,47
+0062,427,137,28
+0063,417,135,8
+0064,397,129,1
+0065,348,111,1
+0066,337,102,1
+0067,327,81,0
+0068,316,35,0
+0069,307,11,2
+0070,306,9,5
+0071,313,27,19
+0072,319,48,23
+0073,310,65,20
+0074,310,74,13
+0075,311,85,16
+0076,312,97,20
+0077,319,111,24
+0078,330,119,31
+0079,321,107,11
+0080,318,94,6
+0081,319,92,11
+0082,319,90,12
+0083,319,82,17
+0084,332,81,21
+0085,333,68,20
+0086,335,73,14
+0087,341,82,19
+0088,331,84,15
+0089,331,83,16
+
+#  
+# Start date: 20251209
+# End date: 20260308
+Nth day,DAU / MAU,DAU / WAU,WAU / MAU
+0000,0.04680851063829787,0.1746031746031746,0.2680851063829787
+0001,0.05603448275862069,0.22807017543859648,0.24568965517241378
+0002,0.06986899563318777,0.26666666666666666,0.26200873362445415
+0003,0.046948356807511735,0.16666666666666666,0.28169014084507044
+0004,0.014634146341463415,0.05357142857142857,0.2731707317073171
+0005,0.024509803921568627,0.09090909090909091,0.2696078431372549
+0006,0.05825242718446602,0.23076923076923078,0.2524271844660194
+0007,0.04854368932038835,0.18867924528301888,0.25728155339805825
+0008,0.04390243902439024,0.16981132075471697,0.25853658536585367
+0009,0.07389162561576355,0.2830188679245283,0.26108374384236455
+0010,0.024390243902439025,0.10204081632653061,0.23902439024390243
+0011,0.009950248756218905,0.04081632653061224,0.24378109452736318
+0012,0.02564102564102564,0.1,0.2564102564102564
+0013,0.02512562814070352,0.11363636363636363,0.22110552763819097
+0014,0.04020100502512563,0.19047619047619047,0.21105527638190955
+0015,0.029556650246305417,0.14285714285714285,0.20689655172413793
+0016,0.13963963963963963,0.5254237288135594,0.26576576576576577
+0017,0.0091324200913242,0.03571428571428571,0.2557077625570776
+0018,0.027522935779816515,0.1,0.27522935779816515
+0019,0.041474654377880185,0.14285714285714285,0.2903225806451613
+0020,0.049107142857142856,0.16176470588235295,0.30357142857142855
+0021,0.07327586206896551,0.22666666666666666,0.3232758620689655
+0022,0.06779661016949153,0.19753086419753085,0.3432203389830508
+0023,0.043478260869565216,0.17543859649122806,0.24782608695652175
+0024,0.07079646017699115,0.24242424242424243,0.2920353982300885
+0025,0.09322033898305085,0.2682926829268293,0.3474576271186441
+0026,0.096,0.25263157894736843,0.38
+0027,0.08203125,0.21,0.390625
+0028,0.07434944237918216,0.18867924528301888,0.3940520446096654
+0029,0.10144927536231885,0.24561403508771928,0.41304347826086957
+0030,0.07719298245614035,0.18032786885245902,0.4280701754385965
+0031,0.054982817869415807,0.13008130081300814,0.422680412371134
+0032,0.04152249134948097,0.10526315789473684,0.3944636678200692
+0033,0.06143344709897611,0.16981132075471697,0.36177474402730375
+0034,0.08974358974358974,0.2413793103448276,0.3717948717948718
+0035,0.15789473684210525,0.37254901960784315,0.42382271468144045
+0036,0.0410958904109589,0.10273972602739725,0.4
+0037,0.035422343324250684,0.09420289855072464,0.3760217983651226
+0038,0.03773584905660377,0.10071942446043165,0.3746630727762803
+0039,0.027247956403269755,0.07194244604316546,0.3787465940054496
+0040,0.021739130434782608,0.06201550387596899,0.35054347826086957
+0041,0.04497354497354497,0.14166666666666666,0.31746031746031744
+0042,0.03626943005181347,0.1728395061728395,0.20984455958549222
+0043,0.08068459657701711,0.34375,0.23471882640586797
+0044,0.03640776699029126,0.15625,0.23300970873786409
+0045,0.03836930455635491,0.16494845360824742,0.23261390887290168
+0046,0.0375,0.15,0.25
+0047,0.029556650246305417,0.11428571428571428,0.25862068965517243
+0048,0.04567307692307692,0.17757009345794392,0.25721153846153844
+0049,0.051643192488262914,0.19642857142857142,0.26291079812206575
+0050,0.02122641509433962,0.1,0.21226415094339623
+0051,0.02403846153846154,0.12048192771084337,0.19951923076923078
+0052,0.033816425120772944,0.1728395061728395,0.1956521739130435
+0053,0.016908212560386472,0.09333333333333334,0.18115942028985507
+0054,0.007371007371007371,0.04411764705882353,0.16707616707616707
+0055,0.030226700251889168,0.18461538461538463,0.163727959697733
+0056,0.02610966057441253,0.18518518518518517,0.1409921671018277
+0057,0.023872679045092837,0.16666666666666666,0.14323607427055704
+0058,0.05774278215223097,0.3235294117647059,0.1784776902887139
+0059,0.03763440860215054,0.21875,0.17204301075268819
+0060,0.0582010582010582,0.27848101265822783,0.20899470899470898
+0061,0.11435523114355231,0.39166666666666666,0.291970802919708
+0062,0.06557377049180328,0.20437956204379562,0.32084309133489464
+0063,0.019184652278177457,0.05925925925925926,0.3237410071942446
+0064,0.0025188916876574307,0.007751937984496124,0.3249370277078086
+0065,0.0028735632183908046,0.009009009009009009,0.31896551724137934
+0066,0.002967359050445104,0.00980392156862745,0.3026706231454006
+0067,0,0,0.24770642201834864
+0068,0,0,0.11075949367088607
+0069,0.006514657980456026,0.18181818181818182,0.035830618892508145
+0070,0.016339869281045753,0.5555555555555556,0.029411764705882353
+0071,0.06070287539936102,0.7037037037037037,0.08626198083067092
+0072,0.07210031347962383,0.4791666666666667,0.15047021943573669
+0073,0.06451612903225806,0.3076923076923077,0.20967741935483872
+0074,0.041935483870967745,0.17567567567567569,0.23870967741935484
+0075,0.05144694533762058,0.18823529411764706,0.2733118971061093
+0076,0.0641025641025641,0.20618556701030927,0.3108974358974359
+0077,0.07523510971786834,0.21621621621621623,0.34796238244514105
+0078,0.09393939393939393,0.2605042016806723,0.3606060606060606
+0079,0.03426791277258567,0.102803738317757,0.3333333333333333
+0080,0.018867924528301886,0.06382978723404255,0.29559748427672955
+0081,0.034482758620689655,0.11956521739130435,0.2884012539184953
+0082,0.03761755485893417,0.13333333333333333,0.28213166144200624
+0083,0.05329153605015674,0.2073170731707317,0.25705329153605017
+0084,0.06325301204819277,0.25925925925925924,0.24397590361445784
+0085,0.06006006006006006,0.29411764705882354,0.2042042042042042
+0086,0.041791044776119404,0.1917808219178082,0.21791044776119403
+0087,0.05571847507331378,0.23170731707317074,0.2404692082111437
+0088,0.045317220543806644,0.17857142857142858,0.2537764350453172
+0089,0.04833836858006042,0.1927710843373494,0.25075528700906347
