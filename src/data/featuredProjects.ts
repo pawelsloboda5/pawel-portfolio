@@ -11,8 +11,8 @@ export const featuredProjects: FeaturedProject[] = [
     id: 'sie-wellness',
     title: 'SIE Wellness',
     tagline: 'AI Copilot for Health Access',
-    description: `An AI-driven health-access platform designed to help uninsured and low-income users find free or low-cost medical care across the DMV area. The system combines semantic search, vector embeddings, and an AI Copilot chat assistant to guide users to the best clinics, hospitals, or providers for their needs. Adopted by caseworkers across Washington D.C. With 100K+ Google impressions in 3 weeks.`,
-    mobileDescription: `An AI-driven platform helping uninsured users find free or low-cost medical care across the DMV area. Combines semantic search and AI chat to guide users to the right providers. Adopted by caseworkers across Washington D.C.`,
+    description: `An AI-powered healthcare discovery platform helping uninsured Americans find affordable care across the DMV area. Combines a multi-turn AI Copilot with dual-collection semantic vector search (50K+ provider services), a 6-agent parallel data extraction pipeline, and programmatic SEO. Adopted by caseworkers and shelters across Washington D.C. with 100K+ Google impressions in 3 weeks.`,
+    mobileDescription: `An AI-powered platform helping uninsured users find affordable healthcare. Features an AI Copilot with semantic search across 50K+ services, adopted by shelters and caseworkers across D.C.`,
     techStack: [
       'Next.js 15',
       'React 19',
@@ -33,7 +33,7 @@ export const featuredProjects: FeaturedProject[] = [
     features: [
       'AI Copilot Chat with retrieval-augmented generation',
       'Semantic search across 50K+ provider services',
-      'Dynamic knowledge graph for medical service filtering',
+      'Multi-agent data extraction pipeline (6 parallel AI agents)',
       'SEO automation for programmatic pages',
       'Nightly data refresh pipeline'
     ]
